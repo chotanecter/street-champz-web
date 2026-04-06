@@ -1,0 +1,1 @@
+{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"d1f911f9c31e2632060df4f79f1cfd14c73ef036"}}

@@ -1,2 +1,1 @@
-# street-champz-web
-Street Champz - The Ultimate SKATE-Style Trick Battle Game
+{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"651158353513199819732c955ca4e88ff356a20d"}}
