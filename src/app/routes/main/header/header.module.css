@@ -1,5 +1,6 @@
 .root {
-    background-color: var(--mantine-color-slate-8);
+    background-color: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
     padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
     display: grid;
     grid-template-columns: 1fr auto 1fr;

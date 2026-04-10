@@ -12,5 +12,10 @@ body,
 body {
     margin: 0;
     color: white;
-    background: #020618;
+    background-color: #020618;
+    background-image: url('/SCBG.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

@@ -2,5 +2,5 @@
     height: 100dvh;
     width: 100%;
     overflow: hidden;
-    background-color: light-dark(#fff, var(--mantine-color-slate-9));
+    background-color: transparent;
 }
