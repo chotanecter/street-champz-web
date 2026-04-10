@@ -1,1 +1,36 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"aa78d8d63798a411fac23bf2dc71ac2cfe98cc78"}}
+.root {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    flex-shrink: 0;
+    background-color: var(--mantine-color-slate-8);
+    border-top: 1px solid var(--mantine-color-dark-4);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.link {
+    flex: 1;
+    text-decoration: none;
+    color: var(--mantine-color-dimmed);
+    font-size: 0.75rem;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    padding-left: var(--mantine-spacing-sm);
+    padding-right: var(--mantine-spacing-sm);
+    padding-top: var(--mantine-spacing-xs);
+    padding-bottom: var(--mantine-spacing-xs);
+
+    &[data-active="true"] {
+        background-color: var(--mantine-primary-color-filled);
+        color: var(--mantine-primary-color-contrast);
+    }
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}

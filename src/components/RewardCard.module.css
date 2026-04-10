@@ -1,1 +1,43 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"532085edaaf9919967e1fbb021c7eb2e702f5e7c"}}
+.card {
+    position: relative;
+    padding: var(--mantine-spacing-xl);
+    background: linear-gradient(
+        135deg,
+        var(--mantine-color-slate-8) 0%,
+        var(--mantine-color-slate-9) 100%
+    );
+    border: 2px solid var(--mantine-color-blue-6);
+    border-radius: var(--mantine-radius-lg);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--mantine-color-blue-6),
+        var(--mantine-color-premium-6),
+        var(--mantine-color-gold-6)
+    );
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--mantine-spacing-md);
+    font-size: 48px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+

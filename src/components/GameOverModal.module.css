@@ -1,1 +1,65 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"c3bcee96646d16b557a4799b89fecff57c3228de"}}
+.modalContent {
+    background: linear-gradient(135deg, var(--mantine-color-slate-8) 0%, var(--mantine-color-slate-9) 100%);
+    border: 1px solid var(--mantine-color-slate-7);
+}
+
+.trophyWin {
+    color: var(--mantine-color-gold-5);
+    animation: bounce 1s ease-in-out;
+}
+
+.trophyLose {
+    color: var(--mantine-color-slate-5);
+    opacity: 0.5;
+}
+
+.titleWin {
+    background: linear-gradient(90deg, var(--mantine-color-gold-4), var(--mantine-color-gold-6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.titleLose {
+    color: var(--mantine-color-slate-4);
+}
+
+.rewardItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--mantine-color-slate-8);
+    border: 1px solid var(--mantine-color-slate-7);
+    border-radius: var(--mantine-radius-md);
+    transition: all 0.2s ease;
+}
+
+.rewardItem:hover {
+    transform: translateY(-2px);
+    border-color: var(--mantine-color-blue-7);
+}
+
+.rewardIcon {
+    color: var(--mantine-color-gold-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rewardIconXp {
+    color: var(--mantine-color-blue-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+

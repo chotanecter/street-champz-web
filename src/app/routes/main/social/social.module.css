@@ -1,1 +1,62 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"5e7398bfbdf5d23fe3b3a09068a6c5ad68cc81a8"}}
+.root {
+  padding: var(--mantine-spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notificationCard {
+  background: var(--mantine-color-slate-8);
+  border: 1px solid var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notificationCard:hover {
+  border-color: var(--mantine-color-blue-6);
+  transform: translateX(4px);
+}
+
+.unread {
+  border-left: 3px solid var(--mantine-color-blue-6);
+  background: linear-gradient(90deg, rgba(0, 145, 255, 0.05) 0%, var(--mantine-color-slate-8) 100%);
+}
+
+.notificationIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  flex-shrink: 0;
+}
+
+.friendCard,
+.requestCard {
+  background: var(--mantine-color-slate-8);
+  border: 1px solid var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+  transition: all 0.2s ease;
+}
+
+.friendCard:hover,
+.requestCard:hover {
+  border-color: var(--mantine-color-blue-6);
+}
+
+.onlineIndicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--mantine-color-green-5);
+  border: 2px solid var(--mantine-color-slate-8);
+  border-radius: 50%;
+}
+

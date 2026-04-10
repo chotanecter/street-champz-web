@@ -1,1 +1,19 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"f0b7ef86dbf46daf2e68bb37ad6406cec0eee380"}}
+.root {
+    width: 100%;
+    max-width: 400px;
+    max-height: 100dvh;
+    display: flex;
+    gap: var(--mantine-spacing-md);
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--mantine-spacing-md);
+    overflow-y: auto;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 45vh;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.5));
+}

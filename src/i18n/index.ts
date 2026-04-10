@@ -1,1 +1,2 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"3e0464c62e22fc00feea5360c333c1f4eecfb6ba"}}
+export { default } from "./i18n";
+export { LANGUAGES } from "./i18n";

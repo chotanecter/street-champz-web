@@ -1,1 +1,193 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"4a98c7d79f9ef4a42bdfc9209bb8dc2d9d9c2c06"}}
+.modalContent {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.modalBody {
+  padding: 0;
+}
+
+.modalContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.imageSection {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  overflow: hidden;
+}
+
+.modalImage {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  /* Remove white backgrounds in modal view */
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5)) contrast(1.05) saturate(1.1);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navButtonLeft {
+  left: 16px;
+}
+
+.navButtonRight {
+  right: 16px;
+}
+
+.imageCounter {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+}
+
+.infoSection {
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.thumbnail {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: scale(1.05);
+}
+
+.thumbnailActive {
+  border-color: rgba(139, 92, 246, 1);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+.buyButton {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.buyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .imageSection {
+    height: 400px;
+  }
+
+  .modalImage {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navButtonLeft {
+    left: 8px;
+  }
+
+  .navButtonRight {
+    right: 8px;
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+

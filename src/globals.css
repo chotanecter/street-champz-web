@@ -1,1 +1,16 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"b67a8bacfd237bd352528f9684a254d48e51008c"}}
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    color: white;
+    background: #020618;
+}

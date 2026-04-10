@@ -1,1 +1,94 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"a582fa85f56f472835618a24869bb1c3c8428478"}}
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(99, 102, 241, 0.05) 100%);
+  transform: scale(1.02);
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  /* Remove white backgrounds and make them blend better */
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4)) contrast(1.05) saturate(1.1);
+}
+
+.mockupContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  padding: 12px;
+  opacity: 0.95;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--mantine-color-dimmed);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background: rgba(255, 255, 255, 1);
+  width: 24px;
+  border-radius: 4px;
+}
+

@@ -1,1 +1,75 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"396ba72cd30b8640c0197ad4de9f9f2eb5bfb3e9"}}
+.root {
+    width: 100%;
+    height: 100%;
+    padding: var(--mantine-spacing-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seasonCard {
+    padding: var(--mantine-spacing-xl);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--mantine-radius-lg);
+    margin-bottom: var(--mantine-spacing-xl);
+}
+
+.trophyIcon {
+    color: var(--mantine-color-gold-5);
+}
+
+.pointsIcon {
+    color: var(--mantine-color-gold-5);
+    fill: var(--mantine-color-gold-5);
+}
+
+.pointsText {
+    color: var(--mantine-color-gold-4);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.progressBar {
+    width: 100%;
+}
+
+.listing {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-top: var(--mantine-spacing-xs);
+    padding-bottom: var(--mantine-spacing-xs);
+
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--mantine-color-dark-4);
+    }
+}
+
+.rankBadge {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: var(--mantine-color-slate-8);
+    border: 2px solid var(--mantine-color-slate-7);
+    border-radius: var(--mantine-radius-md);
+}
+
+/* Highlight top 3 rankings */
+.rankBadge:has(svg) {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.rankDisplay {
+    min-width: 100px;
+    padding: var(--mantine-spacing-md);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--mantine-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,1 +1,14 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"5063d2533ba183f9b8e49cefdf7a57351c1d999b"}}
+.container {
+    min-width: 120px;
+}
+
+.badge {
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.progress {
+    width: 100%;
+}
+

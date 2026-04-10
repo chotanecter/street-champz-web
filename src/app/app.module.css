@@ -1,1 +1,6 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"7cae5cdf05763851120d49c193d0420b02a4638e"}}
+.root {
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    background-color: light-dark(#fff, var(--mantine-color-slate-9));
+}

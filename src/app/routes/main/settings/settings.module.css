@@ -1,1 +1,6 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"c7d591b2182f127cac4486611b28b2b54aad7c3d"}}
+.root {
+  padding: var(--mantine-spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+

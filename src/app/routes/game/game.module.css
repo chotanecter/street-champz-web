@@ -1,1 +1,239 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"61b223c3429dfd77a75d25028760cc5f37137ca7"}}
+.root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    padding: var(--mantine-spacing-sm);
+    background-color: var(--mantine-color-slate-9);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 2px solid var(--mantine-primary-color-filled);
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+}
+
+.game {
+    padding: var(--mantine-spacing-sm);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.gameContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 0;
+}
+
+.mainGameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mantine-spacing-xl);
+    width: 100%;
+    height: 100%;
+    padding: var(--mantine-spacing-md);
+}
+
+/* The big SKATE letters section - THE STAR! */
+.lettersSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--mantine-spacing-md) 0;
+}
+
+/* Action buttons area */
+.actionSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--mantine-spacing-md);
+}
+
+/* Skater animation - now smaller and in background */
+.skaterContainer {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Action buttons - smaller and cleaner */
+.actionButton {
+    min-width: 130px;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Result buttons - smaller and cleaner */
+.resultButton {
+    min-width: 120px;
+    min-height: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--mantine-radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.resultButton:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Players list */
+.players {
+    border-top-left-radius: var(--mantine-radius-lg);
+    border-top-right-radius: var(--mantine-radius-lg);
+    background-color: var(--mantine-color-slate-8);
+    max-height: 35vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.playersList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    padding: var(--mantine-spacing-sm);
+
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--mantine-color-dark-4);
+    }
+}
+
+/* Legacy styles for trick cards (keeping for compatibility) */
+.trickCard {
+    padding: var(--mantine-spacing-md);
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: var(--mantine-radius-md);
+}
+
+.trickCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.trickCard:active {
+    transform: translateY(-2px);
+}
+
+.animationContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skaterEmoji {
+    font-size: 6rem;
+    line-height: 1;
+    user-select: none;
+}
+
+/* Graffiti style text for trick names */
+.graffitiText {
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255, 107, 0, 0.5);
+}
+
+/* Screen shake animation class */
+@keyframes screenShake {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px) translateY(2px); }
+    20%, 40%, 60%, 80% { transform: translateX(8px) translateY(-2px); }
+}
+
+.shaking {
+    animation: screenShake 0.5s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mainGameArea {
+        gap: var(--mantine-spacing-md);
+        padding: var(--mantine-spacing-sm);
+    }
+
+    .lettersSection {
+        padding: var(--mantine-spacing-sm) 0;
+    }
+
+    .actionButton {
+        min-width: 110px;
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .resultButton {
+        min-width: 100px;
+        min-height: 45px;
+        font-size: 0.9rem;
+    }
+
+    .players {
+        max-height: 30vh;
+    }
+
+    .skaterContainer {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .actionButton {
+        min-width: 100px;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .resultButton {
+        min-width: 90px;
+        min-height: 40px;
+        font-size: 0.85rem;
+    }
+}

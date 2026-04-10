@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"8052f665eeec78ce61d054b2402a0289ad7417e0"}}
+{
+  "common": {
+    "play": "プレイ",
+    "shop": "ショップ",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "back": "戻る",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "welcome": "ようこそ",
+    "newGame": "新しいゲーム",
+    "backToHome": "ホームに戻る"
+  },
+  "nav": {
+    "play": "プレイ",
+    "leaderboard": "ランキング",
+    "missions": "ミッション",
+    "shop": "ショップ",
+    "profile": "プロフィール"
+  },
+  "game": {
+    "rollDice": "サイコロを振る",
+    "doYourOwn": "自分で選ぶ",
+    "landed": "成功！",
+    "bailed": "失敗！",
+    "rebate": "やり直し",
+    "youLost": "負けました！",
+    "youWin": "勝ちました！",
+    "runItBack": "もう一度",
+    "gameOver": "ゲームオーバー！",
+    "wins": "勝利！",
+    "didYouLandIt": "成功しましたか？",
+    "yourTurnToSet": "トリックを設定してください！",
+    "waiting": "待機中...",
+    "isSettingTrick": "トリックを設定中！",
+    "startGame": "ゲーム開始",
+    "localPlay": "ローカルプレイ",
+    "onlinePlay": "オンラインプレイ",
+    "beginner": "初級",
+    "advanced": "上級"
+  },
+  "settings": {
+    "title": "設定",
+    "audio": "オーディオ",
+    "soundEffects": "効果音",
+    "soundEffectsDesc": "ゲーム効果音を有効にする",
+    "music": "音楽",
+    "musicDesc": "BGMを有効にする",
+    "notifications": "通知",
+    "pushNotifications": "プッシュ通知",
+    "pushNotificationsDesc": "ゲーム招待や更新の通知を受け取る",
+    "language": "言語",
+    "selectLanguage": "言語を選択",
+    "developerTools": "開発者ツール",
+    "resetOnboarding": "オンボーディングをリセット",
+    "clearAllData": "すべてのデータを消去",
+    "devToolsNote": "これらのオプションは開発モードでのみ利用可能です",
+    "about": "について",
+    "version": "バージョン",
+    "build": "ビルド",
+    "clearDataConfirm": "すべてのローカルデータを消去してもよろしいですか？デモモードの進行状況がリセットされます。"
+  },
+  "shop": {
+    "title": "ショップ",
+    "featured": "おすすめ",
+    "items": "アイテム",
+    "buy": "購入",
+    "owned": "所持中",
+    "points": "ポイント"
+  },
+  "profile": {
+    "title": "プロフィール",
+    "level": "レベル",
+    "wins": "勝利",
+    "losses": "敗北",
+    "winRate": "勝率",
+    "gamesPlayed": "プレイ回数"
+  },
+  "leaderboard": {
+    "title": "ランキング",
+    "rank": "順位",
+    "player": "プレイヤー",
+    "score": "スコア"
+  },
+  "missions": {
+    "title": "ミッション",
+    "daily": "デイリー",
+    "weekly": "ウィークリー",
+    "claim": "受け取る",
+    "completed": "完了"
+  },
+  "social": {
+    "friends": "フレンド",
+    "addFriend": "フレンド追加",
+    "online": "オンライン",
+    "offline": "オフライン",
+    "invite": "招待"
+  }
+}

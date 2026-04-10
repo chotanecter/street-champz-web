@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"7e28690c858fc54a63a623c9c6fcb2bc10351eb9"}}
+{
+  "common": {
+    "play": "Gioca",
+    "shop": "Negozio",
+    "profile": "Profilo",
+    "settings": "Impostazioni",
+    "back": "Indietro",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "welcome": "Benvenuto",
+    "newGame": "Nuova Partita",
+    "backToHome": "Torna alla Home"
+  },
+  "nav": {
+    "play": "Gioca",
+    "leaderboard": "Classifica",
+    "missions": "Missioni",
+    "shop": "Negozio",
+    "profile": "Profilo"
+  },
+  "game": {
+    "rollDice": "Tira il Dado",
+    "doYourOwn": "Scegli Tu",
+    "landed": "FATTO!",
+    "bailed": "FALLITO!",
+    "rebate": "RIPROVA",
+    "youLost": "Hai perso!",
+    "youWin": "Hai vinto!",
+    "runItBack": "Gioca Ancora",
+    "gameOver": "PARTITA FINITA!",
+    "wins": "Vince!",
+    "didYouLandIt": "Ce l'hai fatta?",
+    "yourTurnToSet": "Tocca a te!",
+    "waiting": "In attesa...",
+    "isSettingTrick": "sta scegliendo un trick!",
+    "startGame": "Inizia partita",
+    "localPlay": "Gioco Locale",
+    "onlinePlay": "Gioco Online",
+    "beginner": "Principiante",
+    "advanced": "Avanzato"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "audio": "Audio",
+    "soundEffects": "Effetti Sonori",
+    "soundEffectsDesc": "Attiva gli effetti sonori del gioco",
+    "music": "Musica",
+    "musicDesc": "Attiva la musica di sottofondo",
+    "notifications": "Notifiche",
+    "pushNotifications": "Notifiche Push",
+    "pushNotificationsDesc": "Ricevi notifiche per inviti e aggiornamenti",
+    "language": "Lingua",
+    "selectLanguage": "Seleziona Lingua",
+    "developerTools": "Strumenti Sviluppatore",
+    "resetOnboarding": "Reimposta Tutorial",
+    "clearAllData": "Cancella Tutti i Dati",
+    "devToolsNote": "Queste opzioni sono disponibili solo in modalità sviluppo",
+    "about": "Informazioni",
+    "version": "Versione",
+    "build": "Build",
+    "clearDataConfirm": "Sei sicuro di voler cancellare tutti i dati locali? Questo resetterà i tuoi progressi in modalità demo."
+  },
+  "shop": {
+    "title": "Negozio",
+    "featured": "In Evidenza",
+    "items": "Articoli",
+    "buy": "Acquista",
+    "owned": "Posseduto",
+    "points": "punti"
+  },
+  "profile": {
+    "title": "Profilo",
+    "level": "Livello",
+    "wins": "Vittorie",
+    "losses": "Sconfitte",
+    "winRate": "Percentuale Vittorie",
+    "gamesPlayed": "Partite Giocate"
+  },
+  "leaderboard": {
+    "title": "Classifica",
+    "rank": "Posizione",
+    "player": "Giocatore",
+    "score": "Punteggio"
+  },
+  "missions": {
+    "title": "Missioni",
+    "daily": "Giornaliere",
+    "weekly": "Settimanali",
+    "claim": "Riscatta",
+    "completed": "Completato"
+  },
+  "social": {
+    "friends": "Amici",
+    "addFriend": "Aggiungi Amico",
+    "online": "Online",
+    "offline": "Offline",
+    "invite": "Invita"
+  }
+}

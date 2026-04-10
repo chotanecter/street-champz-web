@@ -1,1 +1,49 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"1650fd0085360e61dfd0345888e85e1019c40ba1"}}
+.container {
+    padding: 4px 8px;
+    border-radius: var(--mantine-radius-md);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.headerContainer {
+    padding: 6px 12px;
+    border-radius: var(--mantine-radius-lg);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.1));
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.headerContainer:hover {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(16, 185, 129, 0.15));
+    border-color: rgba(245, 158, 11, 0.5);
+    transform: translateY(-1px);
+}
+
+.pointsIcon {
+    color: var(--mantine-color-gold-5);
+    fill: var(--mantine-color-gold-5);
+}
+
+.trophyIcon {
+    color: var(--mantine-color-gold-5);
+}
+
+.pointsText {
+    color: var(--mantine-color-gold-4);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.fullContainer {
+    padding: var(--mantine-spacing-lg);
+    border-radius: var(--mantine-radius-lg);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.rankBox {
+    padding: var(--mantine-spacing-md);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--mantine-radius-lg);
+    min-width: 80px;
+}
+

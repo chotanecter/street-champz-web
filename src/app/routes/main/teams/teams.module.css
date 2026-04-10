@@ -1,1 +1,43 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"712f9e6f204b19a9765b5a47b97a3e88fb311641"}}
+.root {
+  padding: var(--mantine-spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.teamLogo {
+  font-size: 48px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-blue-8));
+  border-radius: var(--mantine-radius-md);
+  border: 2px solid var(--mantine-color-blue-5);
+}
+
+.logoButton {
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  border: 2px solid var(--mantine-color-slate-6);
+  background: var(--mantine-color-slate-8);
+  border-radius: var(--mantine-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoButton:hover {
+  border-color: var(--mantine-color-blue-6);
+  transform: scale(1.1);
+}
+
+.logoButtonActive {
+  border-color: var(--mantine-color-blue-5);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-blue-8));
+  box-shadow: 0 0 20px rgba(0, 145, 255, 0.3);
+}
+

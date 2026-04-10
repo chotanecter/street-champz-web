@@ -1,1 +1,72 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"53992b3365dd76f2e2266c657c38c953ed70a947"}}
+.root {
+    min-height: 100vh;
+    background: #020618;
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background: #0f172b;
+    border-right: 1px solid #1d293d;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebarHeader {
+    padding: 16px;
+    border-bottom: 1px solid #1d293d;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.loginWrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020618;
+}
+
+.loginCard {
+    width: 100%;
+    max-width: 400px;
+}
+
+.statCard {
+    padding: 20px;
+    background: #0f172b;
+    border: 1px solid #1d293d;
+}
+
+.statValue {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.statLabel {
+    font-size: 13px;
+    color: #62748e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.tabContent {
+    padding-top: 16px;
+}
+
+.expandedRow {
+    background: #0f172b;
+    padding: 12px 16px;
+}

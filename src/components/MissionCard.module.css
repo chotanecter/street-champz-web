@@ -1,1 +1,61 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"69d0a1322448f390ca6b04e804b58bb809f84640"}}
+.card {
+    background-color: var(--mantine-color-slate-8);
+    border: 1px solid var(--mantine-color-slate-7);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--mantine-color-blue-7);
+}
+
+.completed {
+    background: linear-gradient(135deg, var(--mantine-color-slate-8) 0%, var(--mantine-color-blue-9) 100%);
+    border-color: var(--mantine-color-blue-6);
+}
+
+.canClaim {
+    border-color: var(--mantine-color-blue-5);
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.progress {
+    border-radius: var(--mantine-radius-sm);
+}
+
+.claimedBadge {
+    background-color: var(--mantine-color-success-6);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.claimButton {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(66, 153, 225, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(66, 153, 225, 0.6);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+

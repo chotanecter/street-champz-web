@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"d26be460bb376c12bbc1cb79bed465a21a640e37"}}
+{
+  "common": {
+    "play": "开始游戏",
+    "shop": "商店",
+    "profile": "个人资料",
+    "settings": "设置",
+    "back": "返回",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "welcome": "欢迎",
+    "newGame": "新游戏",
+    "backToHome": "返回主页"
+  },
+  "nav": {
+    "play": "游戏",
+    "leaderboard": "排行榜",
+    "missions": "任务",
+    "shop": "商店",
+    "profile": "个人"
+  },
+  "game": {
+    "rollDice": "掷骰子",
+    "doYourOwn": "自选动作",
+    "landed": "成功！",
+    "bailed": "失败！",
+    "rebate": "重来",
+    "youLost": "你输了！",
+    "youWin": "你赢了！",
+    "runItBack": "再来一局",
+    "gameOver": "游戏结束！",
+    "wins": "获胜！",
+    "didYouLandIt": "你成功了吗？",
+    "yourTurnToSet": "轮到你出招！",
+    "waiting": "等待中...",
+    "isSettingTrick": "正在出招！",
+    "startGame": "开始游戏",
+    "localPlay": "本地游戏",
+    "onlinePlay": "在线游戏",
+    "beginner": "初级",
+    "advanced": "高级"
+  },
+  "settings": {
+    "title": "设置",
+    "audio": "音频",
+    "soundEffects": "音效",
+    "soundEffectsDesc": "启用游戏音效",
+    "music": "音乐",
+    "musicDesc": "启用背景音乐",
+    "notifications": "通知",
+    "pushNotifications": "推送通知",
+    "pushNotificationsDesc": "接收游戏邀请和更新通知",
+    "language": "语言",
+    "selectLanguage": "选择语言",
+    "developerTools": "开发者工具",
+    "resetOnboarding": "重置引导",
+    "clearAllData": "清除所有数据",
+    "devToolsNote": "这些选项仅在开发模式下可用",
+    "about": "关于",
+    "version": "版本",
+    "build": "构建",
+    "clearDataConfirm": "确定要清除所有本地数据吗？这将重置您在演示模式下的进度。"
+  },
+  "shop": {
+    "title": "商店",
+    "featured": "精选",
+    "items": "商品",
+    "buy": "购买",
+    "owned": "已拥有",
+    "points": "积分"
+  },
+  "profile": {
+    "title": "个人资料",
+    "level": "等级",
+    "wins": "胜利",
+    "losses": "失败",
+    "winRate": "胜率",
+    "gamesPlayed": "游戏场次"
+  },
+  "leaderboard": {
+    "title": "排行榜",
+    "rank": "排名",
+    "player": "玩家",
+    "score": "分数"
+  },
+  "missions": {
+    "title": "任务",
+    "daily": "每日",
+    "weekly": "每周",
+    "claim": "领取",
+    "completed": "已完成"
+  },
+  "social": {
+    "friends": "好友",
+    "addFriend": "添加好友",
+    "online": "在线",
+    "offline": "离线",
+    "invite": "邀请"
+  }
+}

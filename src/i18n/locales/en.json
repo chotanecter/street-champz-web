@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"186505fea05564719667f56ed286b48f93a463e1"}}
+{
+  "common": {
+    "play": "Play",
+    "shop": "Shop",
+    "profile": "Profile",
+    "settings": "Settings",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "welcome": "Welcome",
+    "newGame": "New Game",
+    "backToHome": "Back to Home"
+  },
+  "nav": {
+    "play": "Play",
+    "leaderboard": "Leaderboard",
+    "missions": "Missions",
+    "shop": "Shop",
+    "profile": "Profile"
+  },
+  "game": {
+    "rollDice": "Roll Dice",
+    "doYourOwn": "Do Your Own",
+    "landed": "LANDED!",
+    "bailed": "BAILED!",
+    "rebate": "REBATE",
+    "youLost": "You lost!",
+    "youWin": "You Win!",
+    "runItBack": "Run It Back",
+    "gameOver": "GAME OVER!",
+    "wins": "Wins!",
+    "didYouLandIt": "Did you land it?",
+    "yourTurnToSet": "Your Turn to Set!",
+    "waiting": "Waiting...",
+    "isSettingTrick": "is setting a trick!",
+    "startGame": "Start game",
+    "localPlay": "Local Play",
+    "onlinePlay": "Online Play",
+    "beginner": "Beginner",
+    "advanced": "Advanced"
+  },
+  "settings": {
+    "title": "Settings",
+    "audio": "Audio",
+    "soundEffects": "Sound Effects",
+    "soundEffectsDesc": "Enable game sound effects",
+    "music": "Music",
+    "musicDesc": "Enable background music",
+    "notifications": "Notifications",
+    "pushNotifications": "Push Notifications",
+    "pushNotificationsDesc": "Receive notifications for game invites and updates",
+    "language": "Language",
+    "selectLanguage": "Select Language",
+    "developerTools": "Developer Tools",
+    "resetOnboarding": "Reset Onboarding",
+    "clearAllData": "Clear All Data",
+    "devToolsNote": "These options are only available in development mode",
+    "about": "About",
+    "version": "Version",
+    "build": "Build",
+    "clearDataConfirm": "Are you sure you want to clear all local data? This will reset your progress in demo mode."
+  },
+  "shop": {
+    "title": "Shop",
+    "featured": "Featured",
+    "items": "Items",
+    "buy": "Buy",
+    "owned": "Owned",
+    "points": "points"
+  },
+  "profile": {
+    "title": "Profile",
+    "level": "Level",
+    "wins": "Wins",
+    "losses": "Losses",
+    "winRate": "Win Rate",
+    "gamesPlayed": "Games Played"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "rank": "Rank",
+    "player": "Player",
+    "score": "Score"
+  },
+  "missions": {
+    "title": "Missions",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "claim": "Claim",
+    "completed": "Completed"
+  },
+  "social": {
+    "friends": "Friends",
+    "addFriend": "Add Friend",
+    "online": "Online",
+    "offline": "Offline",
+    "invite": "Invite"
+  }
+}

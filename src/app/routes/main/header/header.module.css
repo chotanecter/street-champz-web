@@ -1,1 +1,20 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"036549950b94e9140d333ec1ee0d6f105f07614c"}}
+.root {
+    background-color: var(--mantine-color-slate-8);
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 2px solid var(--mantine-primary-color-filled);
+    gap: var(--mantine-spacing-xs);
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: clamp(5.5rem, 20vw, 9rem);
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+}

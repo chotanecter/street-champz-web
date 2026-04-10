@@ -1,1 +1,2 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"2b7bda91688cabfed6af88232e30496d8c40d5c6"}}
+[phases.setup]
+nixPkgs = ["bun", "curl", "wget"]

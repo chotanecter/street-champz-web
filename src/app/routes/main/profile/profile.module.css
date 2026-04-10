@@ -1,1 +1,142 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"39e614257772fbfea9429d95e323dd2db76e1fb5"}}
+.root {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profileCard {
+    overflow: visible;
+}
+
+.profileHeader {
+    display: flex;
+    gap: var(--mantine-spacing-lg);
+    align-items: flex-start;
+}
+
+@media (max-width: 500px) {
+    .profileHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.avatarSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatarWrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatarWrapper:hover {
+    opacity: 0.9;
+}
+
+.cameraButton {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profileInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.username {
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.quickStat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pointsBadge {
+    margin-top: var(--mantine-spacing-md);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--mantine-spacing-md);
+}
+
+@media (max-width: 500px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: var(--mantine-spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--mantine-radius-md);
+}
+
+/* ===== BETA TESTER RING ===== */
+.betaRing {
+    position: relative;
+    display: inline-block;
+}
+
+.betaRing::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #f59e0b 0deg,
+        #ef4444 90deg,
+        #a855f7 180deg,
+        #3b82f6 270deg,
+        #f59e0b 360deg
+    );
+    animation: spinRing 4s linear infinite;
+    z-index: 0;
+}
+
+.betaRing::after {
+    content: 'BETA';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #f59e0b;
+    background: rgba(0,0,0,0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #f59e0b;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+@keyframes spinRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.betaRingInner {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+

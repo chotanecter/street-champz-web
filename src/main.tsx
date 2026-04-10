@@ -1,1 +1,14 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"e140e60a50369905e81d5595901f9964dfb5fccc"}}
+import { createRoot } from "react-dom/client";
+import "./globals.css";
+import "./i18n/i18n"; // Initialize i18n
+import { App } from "./app/app";
+import { Analytics } from "@vercel/analytics/react";
+
+createRoot(document.getElementById("root")!).render(
+    // <StrictMode>
+    <>
+        <App />
+        <Analytics />
+    </>
+    // </StrictMode>,
+);

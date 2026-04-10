@@ -1,1 +1,314 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"9543f05ffa7fdef604b8f07bb247386209240e57"}}
+.page {
+    background-color: #020618;
+    color: #fff;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 80px 16px 60px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 145, 255, 0.15) 0%, transparent 60%),
+                #020618;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.heroTitle {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #0091FF 0%, #33A7FF 40%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 8px;
+    position: relative;
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px rgba(0, 145, 255, 0.3));
+}
+
+.heroTagline {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: #90a1b9;
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.5;
+}
+
+.heroCta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Section shared */
+.section {
+    padding: 60px 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.sectionTitleAccent {
+    color: #0091FF;
+}
+
+/* How It Works */
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.stepCard {
+    background: #0f172b;
+    border: 1px solid rgba(0, 145, 255, 0.15);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.stepCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 145, 255, 0.4);
+}
+
+.stepNumber {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: #0091FF;
+    margin-bottom: 8px;
+}
+
+.stepIcon {
+    color: #F59E0B;
+    margin-bottom: 12px;
+}
+
+.stepTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.stepDesc {
+    color: #90a1b9;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Features Grid */
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.featureCard {
+    background: #1d293d;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.featureCard:hover {
+    transform: translateY(-2px);
+    background: #243349;
+}
+
+.featureIcon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 145, 255, 0.12);
+    color: #0091FF;
+}
+
+.featureTitle {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.featureDesc {
+    color: #90a1b9;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Leaderboard Preview */
+.leaderboardSection {
+    background: #0f172b;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 145, 255, 0.12);
+}
+
+.leaderboardRow {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    gap: 12px;
+    transition: background 0.15s;
+}
+
+.leaderboardRow:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.leaderboardRank {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.06);
+    color: #90a1b9;
+}
+
+.rankGold {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.rankSilver {
+    background: linear-gradient(135deg, #9CA3AF, #6B7280);
+    color: #fff;
+}
+
+.rankBronze {
+    background: linear-gradient(135deg, #D97706, #92400E);
+    color: #fff;
+}
+
+.leaderboardName {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.leaderboardPoints {
+    color: #F59E0B;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Stats */
+.statsBar {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding: 40px 16px;
+    text-align: center;
+}
+
+.statValue {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: #0091FF;
+}
+
+.statLabel {
+    color: #90a1b9;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* CTA */
+.ctaSection {
+    text-align: center;
+    padding: 60px 16px 40px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(0, 145, 255, 0.1) 0%, transparent 60%);
+}
+
+.ctaTitle {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 12px;
+}
+
+.ctaSubtitle {
+    color: #90a1b9;
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 24px 16px;
+    text-align: center;
+    color: #62748e;
+    font-size: 0.8rem;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.footerLink {
+    color: #90a1b9;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.15s;
+}
+
+.footerLink:hover {
+    color: #0091FF;
+}
+
+/* Animations */
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeInUpVisible {
+    opacity: 1;
+    transform: translateY(0);
+}

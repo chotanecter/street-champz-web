@@ -1,1 +1,72 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"f36021070bd8e36766c2b01d29fa39634e6b23a2"}}
+.card {
+  background: var(--mantine-color-slate-8);
+  border: 1px solid var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+  pointer-events: none;
+}
+
+.unlocked {
+  border-color: var(--mantine-color-gold-6);
+  background: linear-gradient(135deg, var(--mantine-color-slate-8) 0%, rgba(255, 215, 0, 0.05) 100%);
+}
+
+.locked {
+  opacity: 0.7;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--mantine-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--mantine-color-slate-7);
+  border: 2px solid var(--mantine-color-slate-6);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.iconUnlocked {
+  background: linear-gradient(135deg, var(--mantine-color-gold-6), var(--mantine-color-gold-8));
+  border-color: var(--mantine-color-gold-5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.emoji {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.lockIcon {
+  color: var(--mantine-color-slate-5);
+}
+
+.titleUnlocked {
+  color: var(--mantine-color-gold-4);
+}
+

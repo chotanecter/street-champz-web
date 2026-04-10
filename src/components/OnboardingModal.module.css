@@ -1,1 +1,31 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"076f4e8a642dd74671d01eb552508088b321d13f"}}
+.icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-premium-6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 145, 255, 0.3);
+}
+
+.statBox {
+  background: var(--mantine-color-slate-8);
+  border: 1px solid var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+  text-align: center;
+  min-width: 120px;
+}
+
+.bonusBox {
+  background: linear-gradient(135deg, rgba(0, 145, 255, 0.1), rgba(168, 85, 247, 0.1));
+  border: 2px solid var(--mantine-color-blue-6);
+  border-radius: var(--mantine-radius-lg);
+  padding: var(--mantine-spacing-xl);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+

@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"fd0b3b988822ac95c33cb2bd659e3a170ec61cbb"}}
+{
+  "common": {
+    "play": "Spielen",
+    "shop": "Shop",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "back": "Zurück",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "welcome": "Willkommen",
+    "newGame": "Neues Spiel",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "nav": {
+    "play": "Spielen",
+    "leaderboard": "Rangliste",
+    "missions": "Missionen",
+    "shop": "Shop",
+    "profile": "Profil"
+  },
+  "game": {
+    "rollDice": "Würfeln",
+    "doYourOwn": "Eigener Trick",
+    "landed": "GESCHAFFT!",
+    "bailed": "VERFEHLT!",
+    "rebate": "NOCHMAL",
+    "youLost": "Du hast verloren!",
+    "youWin": "Du hast gewonnen!",
+    "runItBack": "Nochmal spielen",
+    "gameOver": "SPIEL VORBEI!",
+    "wins": "Gewinnt!",
+    "didYouLandIt": "Hast du es geschafft?",
+    "yourTurnToSet": "Du bist dran!",
+    "waiting": "Warten...",
+    "isSettingTrick": "wählt einen Trick!",
+    "startGame": "Spiel starten",
+    "localPlay": "Lokal spielen",
+    "onlinePlay": "Online spielen",
+    "beginner": "Anfänger",
+    "advanced": "Fortgeschritten"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "audio": "Audio",
+    "soundEffects": "Soundeffekte",
+    "soundEffectsDesc": "Spielsoundeffekte aktivieren",
+    "music": "Musik",
+    "musicDesc": "Hintergrundmusik aktivieren",
+    "notifications": "Benachrichtigungen",
+    "pushNotifications": "Push-Benachrichtigungen",
+    "pushNotificationsDesc": "Benachrichtigungen für Spieleinladungen und Updates erhalten",
+    "language": "Sprache",
+    "selectLanguage": "Sprache auswählen",
+    "developerTools": "Entwicklertools",
+    "resetOnboarding": "Einführung zurücksetzen",
+    "clearAllData": "Alle Daten löschen",
+    "devToolsNote": "Diese Optionen sind nur im Entwicklungsmodus verfügbar",
+    "about": "Über",
+    "version": "Version",
+    "build": "Build",
+    "clearDataConfirm": "Möchten Sie wirklich alle lokalen Daten löschen? Dies setzt Ihren Fortschritt im Demo-Modus zurück."
+  },
+  "shop": {
+    "title": "Shop",
+    "featured": "Empfohlen",
+    "items": "Artikel",
+    "buy": "Kaufen",
+    "owned": "Besitzt",
+    "points": "Punkte"
+  },
+  "profile": {
+    "title": "Profil",
+    "level": "Level",
+    "wins": "Siege",
+    "losses": "Niederlagen",
+    "winRate": "Siegquote",
+    "gamesPlayed": "Gespielte Spiele"
+  },
+  "leaderboard": {
+    "title": "Rangliste",
+    "rank": "Rang",
+    "player": "Spieler",
+    "score": "Punktzahl"
+  },
+  "missions": {
+    "title": "Missionen",
+    "daily": "Täglich",
+    "weekly": "Wöchentlich",
+    "claim": "Abholen",
+    "completed": "Abgeschlossen"
+  },
+  "social": {
+    "friends": "Freunde",
+    "addFriend": "Freund hinzufügen",
+    "online": "Online",
+    "offline": "Offline",
+    "invite": "Einladen"
+  }
+}

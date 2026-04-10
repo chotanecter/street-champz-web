@@ -1,1 +1,107 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"99214c420e76d685a2e4031f811df6930bd5c76c"}}
+.modalContent {
+    background: linear-gradient(135deg, var(--mantine-color-slate-8) 0%, var(--mantine-color-slate-9) 100%);
+    border: 1px solid var(--mantine-color-slate-7);
+}
+
+.rewardCard {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--mantine-color-slate-8);
+    border: 2px solid var(--mantine-color-slate-7);
+    border-radius: var(--mantine-radius-md);
+    text-align: center;
+    transition: all 0.3s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rewardCardToday {
+    background: linear-gradient(135deg, var(--mantine-color-blue-9) 0%, var(--mantine-color-blue-8) 100%);
+    border-color: var(--mantine-color-blue-5);
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.rewardCardClaimed {
+    opacity: 0.6;
+    background-color: var(--mantine-color-slate-9);
+}
+
+.rewardCardFuture {
+    opacity: 0.5;
+}
+
+.bonusCard {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(168, 85, 247, 0.2)) !important;
+    border-color: var(--mantine-color-gold-6) !important;
+}
+
+.bonusCard.rewardCardToday {
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+}
+
+.bonusBadge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 6px;
+    background: linear-gradient(90deg, var(--mantine-color-gold-6), var(--mantine-color-premium-6));
+    border-radius: var(--mantine-radius-sm);
+    font-size: 8px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.rewardCard:hover {
+    transform: translateY(-2px);
+}
+
+.claimedCheck {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--mantine-color-success-5);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.todayBadge {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.claimSection {
+    background: linear-gradient(135deg, var(--mantine-color-gold-9) 0%, var(--mantine-color-gold-8) 100%);
+    border: 2px solid var(--mantine-color-gold-6);
+    border-radius: var(--mantine-radius-lg);
+    padding: 1.5rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(66, 153, 225, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(66, 153, 225, 0.8);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+

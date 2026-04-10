@@ -1,1 +1,14 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"2d37c4e583bc2cddbcdce0cec8dcf41d03caae89"}}
+module.exports = {
+    plugins: {
+        "postcss-preset-mantine": {},
+        "postcss-simple-vars": {
+            variables: {
+                "mantine-breakpoint-xs": "36em",
+                "mantine-breakpoint-sm": "48em",
+                "mantine-breakpoint-md": "62em",
+                "mantine-breakpoint-lg": "75em",
+                "mantine-breakpoint-xl": "88em",
+            },
+        },
+    },
+};

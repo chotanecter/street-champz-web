@@ -1,1 +1,37 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"22867faeff8a96cfd2a0bf42897a73127b333718"}}
+.card {
+  background: var(--mantine-color-slate-8);
+  border: 1px solid var(--mantine-color-slate-7);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--mantine-color-blue-6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.memberCard {
+  border-color: var(--mantine-color-blue-6);
+  background: linear-gradient(135deg, var(--mantine-color-slate-8) 0%, rgba(0, 145, 255, 0.05) 100%);
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--mantine-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-blue-8));
+  border: 2px solid var(--mantine-color-blue-5);
+  flex-shrink: 0;
+}
+
+.emoji {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+

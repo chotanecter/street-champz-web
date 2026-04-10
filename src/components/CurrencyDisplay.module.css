@@ -1,1 +1,18 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"2161377cfddfdb11f2721a355ab396448e6a83d6"}}
+.container {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--mantine-radius-md);
+}
+
+.coins {
+    color: var(--mantine-color-gold-5);
+    filter: drop-shadow(0 0 4px var(--mantine-color-gold-7));
+}
+
+.gems {
+    color: var(--mantine-color-premium-5);
+    filter: drop-shadow(0 0 4px var(--mantine-color-premium-7));
+}
+

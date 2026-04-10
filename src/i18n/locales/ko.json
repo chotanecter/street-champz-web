@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"f375665a6cd1063a8c7457731ecc7b72f8ea2129"}}
+{
+  "common": {
+    "play": "플레이",
+    "shop": "상점",
+    "profile": "프로필",
+    "settings": "설정",
+    "back": "뒤로",
+    "save": "저장",
+    "cancel": "취소",
+    "confirm": "확인",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "welcome": "환영합니다",
+    "newGame": "새 게임",
+    "backToHome": "홈으로"
+  },
+  "nav": {
+    "play": "플레이",
+    "leaderboard": "리더보드",
+    "missions": "미션",
+    "shop": "상점",
+    "profile": "프로필"
+  },
+  "game": {
+    "rollDice": "주사위 굴리기",
+    "doYourOwn": "직접 선택",
+    "landed": "성공!",
+    "bailed": "실패!",
+    "rebate": "다시하기",
+    "youLost": "졌습니다!",
+    "youWin": "이겼습니다!",
+    "runItBack": "다시 도전",
+    "gameOver": "게임 오버!",
+    "wins": "승리!",
+    "didYouLandIt": "성공했나요?",
+    "yourTurnToSet": "트릭을 설정하세요!",
+    "waiting": "대기 중...",
+    "isSettingTrick": "트릭 설정 중!",
+    "startGame": "게임 시작",
+    "localPlay": "로컬 플레이",
+    "onlinePlay": "온라인 플레이",
+    "beginner": "초급",
+    "advanced": "고급"
+  },
+  "settings": {
+    "title": "설정",
+    "audio": "오디오",
+    "soundEffects": "효과음",
+    "soundEffectsDesc": "게임 효과음 활성화",
+    "music": "음악",
+    "musicDesc": "배경 음악 활성화",
+    "notifications": "알림",
+    "pushNotifications": "푸시 알림",
+    "pushNotificationsDesc": "게임 초대 및 업데이트 알림 받기",
+    "language": "언어",
+    "selectLanguage": "언어 선택",
+    "developerTools": "개발자 도구",
+    "resetOnboarding": "온보딩 초기화",
+    "clearAllData": "모든 데이터 삭제",
+    "devToolsNote": "이 옵션은 개발 모드에서만 사용 가능합니다",
+    "about": "정보",
+    "version": "버전",
+    "build": "빌드",
+    "clearDataConfirm": "모든 로컬 데이터를 삭제하시겠습니까? 데모 모드의 진행 상황이 초기화됩니다."
+  },
+  "shop": {
+    "title": "상점",
+    "featured": "추천",
+    "items": "아이템",
+    "buy": "구매",
+    "owned": "보유 중",
+    "points": "포인트"
+  },
+  "profile": {
+    "title": "프로필",
+    "level": "레벨",
+    "wins": "승리",
+    "losses": "패배",
+    "winRate": "승률",
+    "gamesPlayed": "플레이 횟수"
+  },
+  "leaderboard": {
+    "title": "리더보드",
+    "rank": "순위",
+    "player": "플레이어",
+    "score": "점수"
+  },
+  "missions": {
+    "title": "미션",
+    "daily": "일일",
+    "weekly": "주간",
+    "claim": "수령",
+    "completed": "완료"
+  },
+  "social": {
+    "friends": "친구",
+    "addFriend": "친구 추가",
+    "online": "온라인",
+    "offline": "오프라인",
+    "invite": "초대"
+  }
+}

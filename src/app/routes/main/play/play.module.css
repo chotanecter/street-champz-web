@@ -1,1 +1,13 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"cad6dc4e937fe9431743fd2ab64ae8b833ff994e"}}
+.games {
+    background-color: var(--mantine-color-slate-8);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--mantine-radius-md);
+    margin-top: var(--mantine-spacing-xs);
+}
+
+.game {
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--mantine-color-dark-4);
+    }
+}

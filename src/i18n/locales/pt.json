@@ -1,1 +1,103 @@
-{"error":{"code":"api_version_disabled","message":"v6 of this endpoint has been disabled. Please use v8 instead.","fid":"106c007afe31c9be4468df7f667a0d8dea88cc8c"}}
+{
+  "common": {
+    "play": "Jogar",
+    "shop": "Loja",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "back": "Voltar",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "welcome": "Bem-vindo",
+    "newGame": "Novo Jogo",
+    "backToHome": "Voltar ao Início"
+  },
+  "nav": {
+    "play": "Jogar",
+    "leaderboard": "Ranking",
+    "missions": "Missões",
+    "shop": "Loja",
+    "profile": "Perfil"
+  },
+  "game": {
+    "rollDice": "Rolar Dado",
+    "doYourOwn": "Escolher Manobra",
+    "landed": "ACERTOU!",
+    "bailed": "ERROU!",
+    "rebate": "REPETIR",
+    "youLost": "Você perdeu!",
+    "youWin": "Você venceu!",
+    "runItBack": "Jogar de Novo",
+    "gameOver": "FIM DE JOGO!",
+    "wins": "Venceu!",
+    "didYouLandIt": "Você acertou?",
+    "yourTurnToSet": "Sua vez de escolher!",
+    "waiting": "Aguardando...",
+    "isSettingTrick": "está escolhendo uma manobra!",
+    "startGame": "Iniciar jogo",
+    "localPlay": "Jogo Local",
+    "onlinePlay": "Jogo Online",
+    "beginner": "Iniciante",
+    "advanced": "Avançado"
+  },
+  "settings": {
+    "title": "Configurações",
+    "audio": "Áudio",
+    "soundEffects": "Efeitos Sonoros",
+    "soundEffectsDesc": "Ativar efeitos sonoros do jogo",
+    "music": "Música",
+    "musicDesc": "Ativar música de fundo",
+    "notifications": "Notificações",
+    "pushNotifications": "Notificações Push",
+    "pushNotificationsDesc": "Receber notificações de convites e atualizações",
+    "language": "Idioma",
+    "selectLanguage": "Selecionar Idioma",
+    "developerTools": "Ferramentas de Desenvolvedor",
+    "resetOnboarding": "Reiniciar Tutorial",
+    "clearAllData": "Limpar Todos os Dados",
+    "devToolsNote": "Estas opções só estão disponíveis no modo de desenvolvimento",
+    "about": "Sobre",
+    "version": "Versão",
+    "build": "Build",
+    "clearDataConfirm": "Tem certeza que deseja limpar todos os dados locais? Isso irá resetar seu progresso no modo demo."
+  },
+  "shop": {
+    "title": "Loja",
+    "featured": "Destaque",
+    "items": "Itens",
+    "buy": "Comprar",
+    "owned": "Possui",
+    "points": "pontos"
+  },
+  "profile": {
+    "title": "Perfil",
+    "level": "Nível",
+    "wins": "Vitórias",
+    "losses": "Derrotas",
+    "winRate": "Taxa de Vitória",
+    "gamesPlayed": "Jogos Jogados"
+  },
+  "leaderboard": {
+    "title": "Ranking",
+    "rank": "Posição",
+    "player": "Jogador",
+    "score": "Pontuação"
+  },
+  "missions": {
+    "title": "Missões",
+    "daily": "Diárias",
+    "weekly": "Semanais",
+    "claim": "Resgatar",
+    "completed": "Concluído"
+  },
+  "social": {
+    "friends": "Amigos",
+    "addFriend": "Adicionar Amigo",
+    "online": "Online",
+    "offline": "Offline",
+    "invite": "Convidar"
+  }
+}
