@@ -14,7 +14,6 @@ import { AchievementsProvider } from "./achievements/context";
 import { TeamsProvider } from "./teams/context";
 import { SocialProvider } from "./social/context";
 import { ProfileProvider } from "./profile/context";
-import { ContestsProvider } from "./contests";
 
 // Code-split heavy routes
 const Main = lazy(() => import("./routes/main/main").then(m => ({ default: m.Main })));
@@ -23,8 +22,6 @@ const AdminPortal = lazy(() => import("./routes/admin/admin").then(m => ({ defau
 const ResetPasswordPage = lazy(() => import("./routes/reset-password/reset-password").then(m => ({ default: m.ResetPasswordPage })));
 const ThemeTest = lazy(() => import("./routes/main/theme-test").then(m => ({ default: m.ThemeTest })));
 const LandingPage = lazy(() => import("./routes/landing/landing").then(m => ({ default: m.LandingPage })));
-const ContestsIndex = lazy(() => import("./routes/contests/contests"));
-const ContestDetail = lazy(() => import("./routes/contests/contest-detail"));
 
 const PageLoader = () => <Center h="100dvh"><Loader color="blue" /></Center>;
 
@@ -179,18 +176,6 @@ export function App() {
 
                     <Route path="/landing">
                         <LandingPage />
-                    </Route>
-
-                    <Route path="/contests/:slug">
-                        <ContestsProvider>
-                            <ContestDetail />
-                        </ContestsProvider>
-                    </Route>
-
-                    <Route path="/contests">
-                        <ContestsProvider>
-                            <ContestsIndex />
-                        </ContestsProvider>
                     </Route>
 
                     {/* Everything else stays behind auth (landing shown at / if no token) */}
