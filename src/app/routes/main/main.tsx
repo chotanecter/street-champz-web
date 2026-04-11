@@ -3,7 +3,7 @@ import classes from "./main.module.css";
 import { Navbar } from "./navbar/navbar";
 import { Header } from "./header/header";
 import { Play } from "./play/play";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { notifications } from "@mantine/notifications";
 import { useMyNotifications } from "../../notifications/context";
 import { Leaderboard } from "./leaderboard/leaderboard";
@@ -15,6 +15,9 @@ import { Social } from "./social/social";
 import { Settings } from "./settings/settings";
 import { Help } from "./help/help";
 import { Shop } from "./shop/shop";
+import { ContestsProvider } from "../../contests";
+const ContestsIndex = lazy(() => import("../contests/contests"));
+const ContestDetail = lazy(() => import("../contests/contest-detail"));
 import { useRewards } from "../../rewards/context";
 import { useEconomy } from "../../economy/context";
 import { useAchievements } from "../../achievements/context";
@@ -120,6 +123,24 @@ export function Main() {
 
                 <Route path="/shop">
                     <Shop />
+                </Route>
+
+                <Route path="/contests/:slug">
+                    {params => (
+                        <ContestsProvider>
+                            <Suspense fallback={null}>
+                                <ContestDetail />
+                            </Suspense>
+                        </ContestsProvider>
+                    )}
+                </Route>
+
+                <Route path="/contests">
+                    <ContestsProvider>
+                        <Suspense fallback={null}>
+                            <ContestsIndex />
+                        </Suspense>
+                    </ContestsProvider>
                 </Route>
             </div>
 
