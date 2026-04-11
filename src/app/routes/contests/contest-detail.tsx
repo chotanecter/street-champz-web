@@ -2,18 +2,19 @@ import { Container, Loader, SimpleGrid, Stack, Text, Title } from "@mantine/core
 import { useRoute } from "wouter";
 import { ContestHeroCard } from "../../contests/components/ContestHeroCard";
 import { SubmissionCard } from "../../contests/components/SubmissionCard";
+import { Leaderboard } from "../../contests/components/Leaderboard";
 import { TrickReel } from "../../contests/components/TrickReel";
 import { WinnerBanner } from "../../contests/components/WinnerBanner";
 import { useContest } from "../../contests/hooks/useContest";
 
 /**
- * GET /contests/:slug — public contest detail view.
+ * GET /contests/:slug â public contest detail view.
  *
  * Layout:
  *  1. Hero card (sponsor, prize, countdown, Enter CTA)
- *  2. TrickReel — pro's 5 videos
+ *  2. TrickReel â pro's 5 videos
  *  3. (if complete) WinnerBanner
- *  4. SubmissionGrid — all completed entries, sorted by judge score then upvotes
+ *  4. SubmissionGrid â all completed entries, sorted by judge score then upvotes
  */
 export default function ContestDetailRoute() {
   const [, params] = useRoute<{ slug: string }>("/contests/:slug");
@@ -50,7 +51,9 @@ export default function ContestDetailRoute() {
         <ContestHeroCard contest={contest} />
         <TrickReel tricks={contest.tricks} skaterName={contest.featuredSkater.name} />
         {winner && <WinnerBanner winner={winner} prizeDescription={contest.prizeDescription} />}
-        <div>
+        <Leaderboard submissions={sorted} />
+
+          <div>
           <Title order={3} mb="sm">
             Entries ({sorted.length})
           </Title>
@@ -61,7 +64,7 @@ export default function ContestDetailRoute() {
           </SimpleGrid>
           {sorted.length === 0 && (
             <Text c="dimmed" mt="md">
-              No submissions yet — be the first to enter.
+              No submissions yet â be the first to enter.
             </Text>
           )}
         </div>

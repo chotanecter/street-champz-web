@@ -1,3 +1,5 @@
+import { ContestsProvider } from "../../contests";
+import { AdminContestsPanel } from "../../contests/components/AdminContestsPanel";
 import { useState, useEffect, useCallback, useRef } from "react";
 import {
     Paper,
@@ -38,7 +40,7 @@ function useAdminFetch() {
         }), [auth.token]);
 }
 
-// ── Types ──────────────────────────────────────────────────────
+// ââ Types ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 interface Stats {
     total_users: number;
@@ -84,7 +86,7 @@ interface ActionEntry {
     created_at: string;
 }
 
-// ── Stat Card ──────────────────────────────────────────────────
+// ââ Stat Card ââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function StatCard({ label, value, color }: { label: string; value: number; color: string }) {
     return (
@@ -95,7 +97,7 @@ function StatCard({ label, value, color }: { label: string; value: number; color
     );
 }
 
-// ── Dashboard ──────────────────────────────────────────────────
+// ââ Dashboard ââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function DashboardPage() {
     const adminFetch = useAdminFetch();
@@ -141,7 +143,7 @@ function DashboardPage() {
     );
 }
 
-// ── Users Page ─────────────────────────────────────────────────
+// ââ Users Page âââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function UsersPage({ onSelectUser }: { onSelectUser: (id: string) => void }) {
     const adminFetch = useAdminFetch();
@@ -291,7 +293,7 @@ function UsersPage({ onSelectUser }: { onSelectUser: (id: string) => void }) {
                                                     setPointsReason("");
                                                     setPointsModal(true);
                                                 }}>
-                                                    Points ±
+                                                    Points Â±
                                                 </Button>
                                             )}
                                             {user.banned ? (
@@ -316,7 +318,7 @@ function UsersPage({ onSelectUser }: { onSelectUser: (id: string) => void }) {
                 </div>
             )}
 
-            <Modal opened={pointsModal} onClose={() => setPointsModal(false)} title={`Add / Deduct Points — ${pointsUser?.username}`}>
+            <Modal opened={pointsModal} onClose={() => setPointsModal(false)} title={`Add / Deduct Points â ${pointsUser?.username}`}>
                 <Stack>
                     <NumberInput label="Amount" value={pointsAmount} onChange={setPointsAmount} allowNegative />
                     <Text size="xs" c="dimmed">Tip: use a negative number to deduct</Text>
@@ -336,7 +338,7 @@ function UsersPage({ onSelectUser }: { onSelectUser: (id: string) => void }) {
     );
 }
 
-// ── User Detail Page ───────────────────────────────────────────
+// ââ User Detail Page âââââââââââââââââââââââââââââââââââââââââââ
 
 function UserDetailPage({ userId, onBack }: { userId: string; onBack: () => void }) {
     const adminFetch = useAdminFetch();
@@ -428,7 +430,7 @@ function UserDetailPage({ userId, onBack }: { userId: string; onBack: () => void
     );
 }
 
-// ── Games Page ─────────────────────────────────────────────────
+// ââ Games Page âââââââââââââââââââââââââââââââââââââââââââââââââ
 
 function GamesPage() {
     const adminFetch = useAdminFetch();
@@ -538,7 +540,7 @@ function GamesPage() {
     );
 }
 
-// ── Actions Page ───────────────────────────────────────────────
+// ââ Actions Page âââââââââââââââââââââââââââââââââââââââââââââââ
 
 function ActionsPage() {
     const adminFetch = useAdminFetch();
@@ -600,9 +602,9 @@ function ActionsPage() {
     );
 }
 
-// ── Main Admin Portal ─────────────────────────────────────────
+// ââ Main Admin Portal âââââââââââââââââââââââââââââââââââââââââ
 
-type AdminView = "dashboard" | "users" | "user-detail" | "games" | "actions";
+type AdminView = "dashboard" | "users" | "user-detail" | "games" | "actions" | "contests";
 
 export function AdminPortal() {
     const auth = useAuth();
@@ -635,7 +637,8 @@ export function AdminPortal() {
                     <NavLink label="Dashboard" active={view === "dashboard"} onClick={() => setView("dashboard")} />
                     <NavLink label="Users" active={view === "users" || view === "user-detail"} onClick={() => setView("users")} />
                     <NavLink label="Games" active={view === "games"} onClick={() => setView("games")} />
-                    <NavLink label="Action Log" active={view === "actions"} onClick={() => setView("actions")} />
+                    <NavLink label="Contests" active={view === "contests"} onClick={() => setView("contests")} />
+                        <NavLink label="Action Log" active={view === "actions"} onClick={() => setView("actions")} />
                     <NavLink label="Back to App" onClick={() => navigate("/")} c="dimmed" mt="auto" />
                 </Stack>
             </div>
@@ -644,6 +647,7 @@ export function AdminPortal() {
                 {view === "users" && <UsersPage onSelectUser={id => { setSelectedUserId(id); setView("user-detail"); }} />}
                 {view === "user-detail" && <UserDetailPage userId={selectedUserId} onBack={() => setView("users")} />}
                 {view === "games" && <GamesPage />}
+                {view === "contests" && (<ContestsProvider><AdminContestsPanel /></ContestsProvider>)}
                 {view === "actions" && <ActionsPage />}
             </div>
         </div>
