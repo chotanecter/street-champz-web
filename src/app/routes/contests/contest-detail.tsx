@@ -1,4 +1,4 @@
-import { Container, Loader, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Container, Loader, Paper, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { useRoute } from "wouter";
 import { ContestHeroCard } from "../../contests/components/ContestHeroCard";
 import { SubmissionCard } from "../../contests/components/SubmissionCard";
@@ -49,7 +49,16 @@ export default function ContestDetailRoute() {
     <Container size="xl" py="xl">
       <Stack gap="xl">
         <ContestHeroCard contest={contest} />
-        <TrickReel tricks={contest.tricks} skaterName={contest.featuredSkater.name} />
+        {contest.status === "draft" || contest.status === "scheduled" ? (
+          <Paper p="xl" radius="md" withBorder ta="center">
+            <Title order={3} mb="xs">Coming Soon</Title>
+            <Text c="dimmed">
+              The featured tricks will be revealed when the contest goes live.
+            </Text>
+          </Paper>
+        ) : (
+          <TrickReel tricks={contest.tricks} skaterName={contest.featuredSkater.name} />
+        )}
         {winner && <WinnerBanner winner={winner} prizeDescription={contest.prizeDescription} />}
         <Leaderboard submissions={sorted} />
 

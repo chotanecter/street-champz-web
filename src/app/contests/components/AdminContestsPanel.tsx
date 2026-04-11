@@ -25,6 +25,8 @@ export function AdminContestsPanel() {
   const [subsLoading, setSubsLoading] = useState(false);
   const [active, setActive] = useState<Submission | null>(null);
   const [opened, { open, close }] = useDisclosure(false);
+  const [statusOverride, setStatusOverride] = useState<Record<string, string>>({});
+  const [statusBusy, setStatusBusy] = useState(false);
 
   useEffect(() => {
     if (!selectedSlug) {
@@ -42,6 +44,34 @@ export function AdminContestsPanel() {
 
   if (loading) return <Loader />;
   if (error) return <Text c="red">{error}</Text>;
+
+  const selectedContest = contests.find((c) => c.slug === selectedSlug);
+  const effectiveStatus = selectedContest
+    ? statusOverride[selectedContest.slug] ?? selectedContest.status
+    : null;
+  const isLive =
+    effectiveStatus === "live" ||
+    effectiveStatus === "judging" ||
+    effectiveStatus === "complete";
+
+  const toggleLive = async () => {
+    if (!selectedContest) return;
+    setStatusBusy(true);
+    const next = isLive ? "scheduled" : "live";
+    const base =
+      (import.meta as unknown as { env: Record<string, string> }).env.VITE_API_BASE ?? "/api";
+    try {
+      await fetch(`${base}/contests/${selectedContest.slug}`, {
+        method: "PATCH",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: next }),
+      });
+      setStatusOverride((prev) => ({ ...prev, [selectedContest.slug]: next }));
+    } finally {
+      setStatusBusy(false);
+    }
+  };
 
   const saveScorecard = async (
     sub: Submission,
@@ -74,6 +104,34 @@ export function AdminContestsPanel() {
         onChange={setSelectedSlug}
         searchable
       />
+
+      {selectedContest && (
+        <Paper withBorder radius="md" p="md">
+          <Group justify="space-between" align="center">
+            <Stack gap={2}>
+              <Group gap="xs">
+                <Text fw={700}>{selectedContest.title}</Text>
+                <Badge color={isLive ? "green" : "gray"} variant="light">
+                  {effectiveStatus}
+                </Badge>
+              </Group>
+              <Text size="sm" c="dimmed">
+                {isLive
+                  ? "The featured trick videos are revealed to players."
+                  : "Players see a Coming Soon placeholder until you reveal the tricks."}
+              </Text>
+            </Stack>
+            <Button
+              color={isLive ? "orange" : "green"}
+              variant={isLive ? "light" : "filled"}
+              loading={statusBusy}
+              onClick={toggleLive}
+            >
+              {isLive ? "Hide tricks" : "Reveal tricks (go live)"}
+            </Button>
+          </Group>
+        </Paper>
+      )}
 
       {subsLoading && <Loader size="sm" />}
 

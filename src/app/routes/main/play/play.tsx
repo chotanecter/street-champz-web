@@ -219,7 +219,7 @@ export function Play() {
                             <Group gap={6}>
                                 <Sparkles size={16} color="#1a1a1a" />
                                 <Badge color="dark" variant="filled" size="sm">
-                                    Limited edition
+                                    Coming Soon
                                 </Badge>
                             </Group>
                             <Title order={4} c="dark.9" fw={800}>
@@ -229,7 +229,7 @@ export function Play() {
                                 Match the featured pro&apos;s 5 tricks. Judged, ranked, and sponsored — with a real prize.
                             </Text>
                             <Text size="xs" c="dark.7" fw={700}>
-                                Sponsored · Judged · Leaderboard
+                                Coming Soon · Sponsored · Judged
                             </Text>
                         </Stack>
                     </Box>
