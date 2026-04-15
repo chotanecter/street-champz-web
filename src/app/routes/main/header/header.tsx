@@ -71,15 +71,6 @@ export function Header() {
                 </Badge>
             </Group>
 
-            {/* Center: Logo */}
-            <div className={classes.logoContainer}>
-                <img
-                    className={classes.logo}
-                    src="/logo.png"
-                    alt="Street Champz"
-                />
-            </div>
-
             {/* Right: Notifications */}
             <Group justify="end" gap="xs">
                 <Indicator
