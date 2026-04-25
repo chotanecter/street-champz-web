@@ -34,12 +34,12 @@
 }
 
 .bonusCard {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(168, 85, 247, 0.2)) !important;
+    background: linear-gradient(135deg, rgba(232, 115, 44, 0.2), rgba(168, 85, 247, 0.2)) !important;
     border-color: var(--mantine-color-gold-6) !important;
 }
 
 .bonusCard.rewardCardToday {
-    box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 25px rgba(232, 115, 44, 0.6);
 }
 
 .bonusBadge {

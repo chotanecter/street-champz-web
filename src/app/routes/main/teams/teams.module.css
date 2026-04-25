@@ -38,6 +38,6 @@
 .logoButtonActive {
   border-color: var(--mantine-color-blue-5);
   background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-blue-8));
-  box-shadow: 0 0 20px rgba(0, 145, 255, 0.3);
+  box-shadow: 0 0 20px rgba(232, 115, 44, 0.35);
 }
 

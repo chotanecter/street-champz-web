@@ -64,7 +64,7 @@ export const celebrateCoins = celebratePoints;
 
 // Level up - colorful burst
 export const celebrateLevelUp = () => {
-    const colors = ["#0091FF", "#10B981", "#A855F7", "#F59E0B"];
+    const colors = ["#e8732c", "#10B981", "#ffffff", "#dc3545"];
     
     confetti({
         particleCount: 150,

@@ -67,32 +67,32 @@ export function App() {
         <MantineProvider
             theme={{
                 colors: {
-                    // Enhanced primary blue - more vibrant
+                    // Primary "blue" key remapped to ORANGE (kept name to flow through the codebase)
                     "blue": [
-                        "#E6F4FF",
-                        "#CCE9FF",
-                        "#99D3FF",
-                        "#66BDFF",
-                        "#33A7FF",
-                        "#0091FF",
-                        "#0076CC",
-                        "#005C99",
-                        "#004166",
-                        "#002733"
+                        "#fff5ed",
+                        "#ffe9d5",
+                        "#fcd0aa",
+                        "#fab575",
+                        "#ff9555",
+                        "#e8732c",
+                        "#d6651e",
+                        "#b3551d",
+                        "#8f461d",
+                        "#5a2c10"
                     ],
 
-                    // Gold/Yellow for currency and rewards
+                    // "gold" key remapped to RED for accents (rank, alerts)
                     "gold": [
-                        "#FFFBEB",
-                        "#FEF3C7",
-                        "#FDE68A",
-                        "#FCD34D",
-                        "#FBBF24",
-                        "#F59E0B",
-                        "#D97706",
-                        "#B45309",
-                        "#92400E",
-                        "#78350F"
+                        "#fdecec",
+                        "#fbcccc",
+                        "#f7a3a3",
+                        "#f17575",
+                        "#e84747",
+                        "#dc3545",
+                        "#c82a37",
+                        "#a91f2b",
+                        "#8a1612",
+                        "#5a0e0c"
                     ],
 
                     // Green for success, wins, and positive actions
@@ -123,32 +123,32 @@ export function App() {
                         "#581C87"
                     ],
 
-                    // Slate for surfaces (kept from original)
+                    // Slate for surfaces - warm neutrals on near-black
                     "slate": [
-                        "#f8fafc",
-                        "#f1f5f9",
-                        "#e2e8f0",
-                        "#cad5e2",
-                        "#90a1b9",
-                        "#62748e",
-                        "#45556c",
-                        "#1d293d",
-                        "#0f172b",
-                        "#020618"
+                        "#f5f3ee",
+                        "#e6e2d8",
+                        "#cdc8bc",
+                        "#aea99c",
+                        "#a09c92",
+                        "#6b6862",
+                        "#4a4843",
+                        "#2a2a2e",
+                        "#1d1d22",
+                        "#0a0a0b"
                     ],
 
-                    // Dark for backgrounds (kept from original)
+                    // Dark for backgrounds - true near-black with warm tints
                     "dark": [
-                        "#f8fafc",
-                        "#90a1b9",
-                        "#62748e",
-                        "#45556c",
-                        "#1d293d",
-                        "#0f172b",
-                        "#020618",
-                        "#020513",
-                        "#020514",
-                        "#020512"
+                        "#f5f3ee",
+                        "#a09c92",
+                        "#6b6862",
+                        "#4a4843",
+                        "#2a2a2e",
+                        "#1d1d22",
+                        "#15151a",
+                        "#0f0f12",
+                        "#0a0a0b",
+                        "#050506"
                     ]
                 },
 

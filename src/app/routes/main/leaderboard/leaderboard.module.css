@@ -8,8 +8,8 @@
 
 .seasonCard {
     padding: var(--mantine-spacing-xl);
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.05));
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    background: linear-gradient(135deg, rgba(232, 115, 44, 0.1), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(232, 115, 44, 0.3);
     border-radius: var(--mantine-radius-lg);
     margin-bottom: var(--mantine-spacing-xl);
 }
@@ -25,7 +25,7 @@
 
 .pointsText {
     color: var(--mantine-color-gold-4);
-    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+    text-shadow: 0 0 10px rgba(232, 115, 44, 0.3);
 }
 
 .progressBar {
@@ -60,8 +60,8 @@
 
 /* Highlight top 3 rankings */
 .rankBadge:has(svg) {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
-    border-color: rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, rgba(232, 115, 44, 0.2), rgba(232, 115, 44, 0.1));
+    border-color: rgba(232, 115, 44, 0.4);
 }
 
 .rankDisplay {
