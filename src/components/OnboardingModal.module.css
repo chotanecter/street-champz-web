@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 8px 24px rgba(0, 145, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(232, 115, 44, 0.35);
 }
 
 .statBox {
@@ -20,7 +20,7 @@
 }
 
 .bonusBox {
-  background: linear-gradient(135deg, rgba(0, 145, 255, 0.1), rgba(168, 85, 247, 0.1));
+  background: linear-gradient(135deg, rgba(232, 115, 44, 0.12), rgba(220, 53, 69, 0.10));
   border: 2px solid var(--mantine-color-blue-6);
   border-radius: var(--mantine-radius-lg);
   padding: var(--mantine-spacing-xl);

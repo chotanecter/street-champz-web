@@ -121,7 +121,7 @@ function DashboardPage() {
             <Title order={3}>Dashboard</Title>
             <Grid>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                    <StatCard value={stats.total_users} label="Total Users" color="#0091FF" />
+                    <StatCard value={stats.total_users} label="Total Users" color="#e8732c" />
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                     <StatCard value={stats.active_games} label="Active Games" color="#10B981" />
@@ -133,7 +133,7 @@ function DashboardPage() {
                     <StatCard value={stats.banned_users} label="Banned Users" color="#EF4444" />
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
-                    <StatCard value={stats.new_users_today} label="New Today" color="#F59E0B" />
+                    <StatCard value={stats.new_users_today} label="New Today" color="#ff9555" />
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, sm: 6, md: 4 }}>
                     <StatCard value={stats.online_count} label="Online Now" color="#A855F7" />

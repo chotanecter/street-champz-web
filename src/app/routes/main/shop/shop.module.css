@@ -272,8 +272,8 @@
     gap: var(--mantine-spacing-xl);
     padding: var(--mantine-spacing-xl);
     margin-top: var(--mantine-spacing-xl);
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(139, 92, 246, 0.15));
-    border: 2px solid rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, rgba(232, 115, 44, 0.15), rgba(139, 92, 246, 0.15));
+    border: 2px solid rgba(232, 115, 44, 0.4);
     border-radius: var(--mantine-radius-lg);
     flex-wrap: wrap;
     text-align: center;
@@ -283,7 +283,7 @@
     width: 80px;
     height: 80px;
     object-fit: contain;
-    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.5));
+    filter: drop-shadow(0 0 20px rgba(232, 115, 44, 0.5));
     animation: float 3s ease-in-out infinite;
 }
 

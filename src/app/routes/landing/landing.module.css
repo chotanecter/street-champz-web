@@ -1,5 +1,5 @@
 .page {
-    background-color: #020618;
+    background-color: #0a0a0b;
     color: #fff;
     min-height: 100dvh;
     overflow-x: hidden;
@@ -14,8 +14,8 @@
     position: relative;
     text-align: center;
     padding: 80px 16px 60px;
-    background: radial-gradient(ellipse at 50% 0%, rgba(0, 145, 255, 0.15) 0%, transparent 60%),
-                #020618;
+    background: radial-gradient(ellipse at 50% 0%, rgba(232, 115, 44, 0.15) 0%, transparent 60%),
+                #0a0a0b;
     overflow: hidden;
 }
 
@@ -31,7 +31,7 @@
     font-family: 'Permanent Marker', cursive;
     font-size: clamp(2.5rem, 8vw, 5rem);
     letter-spacing: 2px;
-    background: linear-gradient(135deg, #0091FF 0%, #33A7FF 40%, #F59E0B 100%);
+    background: linear-gradient(135deg, #e8732c 0%, #ff9555 40%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -39,12 +39,12 @@
     margin-bottom: 8px;
     position: relative;
     text-shadow: none;
-    filter: drop-shadow(0 0 30px rgba(0, 145, 255, 0.3));
+    filter: drop-shadow(0 0 30px rgba(232, 115, 44, 0.35));
 }
 
 .heroTagline {
     font-size: clamp(1rem, 2.5vw, 1.35rem);
-    color: #90a1b9;
+    color: #a09c92;
     max-width: 500px;
     margin: 0 auto 32px;
     line-height: 1.5;
@@ -73,7 +73,7 @@
 }
 
 .sectionTitleAccent {
-    color: #0091FF;
+    color: #e8732c;
 }
 
 /* How It Works */
@@ -84,8 +84,8 @@
 }
 
 .stepCard {
-    background: #0f172b;
-    border: 1px solid rgba(0, 145, 255, 0.15);
+    background: #15151a;
+    border: 1px solid rgba(232, 115, 44, 0.18);
     border-radius: 12px;
     padding: 32px 24px;
     text-align: center;
@@ -94,18 +94,18 @@
 
 .stepCard:hover {
     transform: translateY(-4px);
-    border-color: rgba(0, 145, 255, 0.4);
+    border-color: rgba(232, 115, 44, 0.45);
 }
 
 .stepNumber {
     font-family: 'Permanent Marker', cursive;
     font-size: 2rem;
-    color: #0091FF;
+    color: #e8732c;
     margin-bottom: 8px;
 }
 
 .stepIcon {
-    color: #F59E0B;
+    color: #ff9555;
     margin-bottom: 12px;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .stepDesc {
-    color: #90a1b9;
+    color: #a09c92;
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -129,7 +129,7 @@
 }
 
 .featureCard {
-    background: #1d293d;
+    background: #1d1d22;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     padding: 24px;
@@ -141,7 +141,7 @@
 
 .featureCard:hover {
     transform: translateY(-2px);
-    background: #243349;
+    background: #26262d;
 }
 
 .featureIcon {
@@ -152,8 +152,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 145, 255, 0.12);
-    color: #0091FF;
+    background: rgba(232, 115, 44, 0.14);
+    color: #e8732c;
 }
 
 .featureTitle {
@@ -163,19 +163,19 @@
 }
 
 .featureDesc {
-    color: #90a1b9;
+    color: #a09c92;
     font-size: 0.85rem;
     line-height: 1.5;
 }
 
 /* Leaderboard Preview */
 .leaderboardSection {
-    background: #0f172b;
+    background: #15151a;
     border-radius: 16px;
     padding: 32px 24px;
     max-width: 700px;
     margin: 0 auto;
-    border: 1px solid rgba(0, 145, 255, 0.12);
+    border: 1px solid rgba(232, 115, 44, 0.14);
 }
 
 .leaderboardRow {
@@ -202,22 +202,22 @@
     font-size: 0.85rem;
     flex-shrink: 0;
     background: rgba(255, 255, 255, 0.06);
-    color: #90a1b9;
+    color: #a09c92;
 }
 
 .rankGold {
-    background: linear-gradient(135deg, #F59E0B, #D97706);
+    background: linear-gradient(135deg, #ff9555, #e8732c);
     color: #fff;
-    box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 12px rgba(232, 115, 44, 0.35);
 }
 
 .rankSilver {
-    background: linear-gradient(135deg, #9CA3AF, #6B7280);
-    color: #fff;
+    background: linear-gradient(135deg, #cdc8bc, #a09c92);
+    color: #1d1d22;
 }
 
 .rankBronze {
-    background: linear-gradient(135deg, #D97706, #92400E);
+    background: linear-gradient(135deg, #dc3545, #8a1612);
     color: #fff;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .leaderboardPoints {
-    color: #F59E0B;
+    color: #e8732c;
     font-weight: 700;
     font-size: 0.9rem;
 }
@@ -246,11 +246,11 @@
 .statValue {
     font-family: 'Permanent Marker', cursive;
     font-size: 2rem;
-    color: #0091FF;
+    color: #e8732c;
 }
 
 .statLabel {
-    color: #90a1b9;
+    color: #a09c92;
     font-size: 0.85rem;
     margin-top: 4px;
 }
@@ -259,7 +259,7 @@
 .ctaSection {
     text-align: center;
     padding: 60px 16px 40px;
-    background: radial-gradient(ellipse at 50% 100%, rgba(0, 145, 255, 0.1) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 100%, rgba(232, 115, 44, 0.12) 0%, transparent 60%);
 }
 
 .ctaTitle {
@@ -269,7 +269,7 @@
 }
 
 .ctaSubtitle {
-    color: #90a1b9;
+    color: #a09c92;
     margin-bottom: 24px;
     font-size: 1rem;
 }
@@ -279,7 +279,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding: 24px 16px;
     text-align: center;
-    color: #62748e;
+    color: #6b6862;
     font-size: 0.8rem;
 }
 
@@ -291,14 +291,14 @@
 }
 
 .footerLink {
-    color: #90a1b9;
+    color: #a09c92;
     text-decoration: none;
     font-size: 0.8rem;
     transition: color 0.15s;
 }
 
 .footerLink:hover {
-    color: #0091FF;
+    color: #e8732c;
 }
 
 /* Animations */
