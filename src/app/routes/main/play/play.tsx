@@ -3,7 +3,7 @@ import { useAuth } from "../../../auth/context";
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import classes from "./play.module.css";
-import { Gamepad2, Users, Clock, X, Swords } from "lucide-react";
+import { Gamepad2, Users, Clock, X, Swords, Sparkles } from "lucide-react";
 import { useMyNotifications } from "../../../notifications/context";
 import { GameCard, UserAvatar } from "../../../../components";
 import { motion } from "framer-motion";
@@ -72,7 +72,7 @@ export function Play() {
             // Show a prominent clickable notification
             notifications.show({
                 id: `invite-${gameId}`,
-                title: "🎮 Game Challenge!",
+                title: "ð® Game Challenge!",
                 message: `${inviterUsername} challenged you! Tap here to join.`,
                 color: "orange",
                 autoClose: 15000,
@@ -188,6 +188,80 @@ export function Play() {
                         Jump back into an active game or start your own game to play!
                     </Text>
                 </Box>
+            </motion.div>
+
+            {/* Game Modes — shiny sponsored contest + classic game of SKATE */}
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeInUp}
+            >
+                <Group justify="space-between" mb="md">
+                    <Title order={3} fw={500}>
+                        Game Modes
+                    </Title>
+                </Group>
+                <Group grow align="stretch" wrap="nowrap">
+                    <Box
+                        onClick={() => navigate("/contests")}
+                        style={{
+                            cursor: "pointer",
+                            borderRadius: 14,
+                            padding: 20,
+                            background:
+                                "linear-gradient(135deg, #fff3a0 0%, #f4c430 25%, #b8860b 55%, #f4c430 85%, #fff3a0 100%)",
+                            boxShadow:
+                                "0 0 20px rgba(244, 196, 48, 0.55), inset 0 0 12px rgba(255, 255, 255, 0.35)",
+                            border: "1px solid rgba(255, 255, 255, 0.4)",
+                        }}
+                    >
+                        <Stack gap={6}>
+                            <Group gap={6}>
+                                <Sparkles size={16} color="#1a1a1a" />
+                                <Badge color="dark" variant="filled" size="sm">
+                                    Coming Soon
+                                </Badge>
+                            </Group>
+                            <Title order={4} c="dark.9" fw={800}>
+                                S.K.A.T.E. Challenge
+                            </Title>
+                            <Text size="sm" c="dark.8">
+                                Match the featured pro&apos;s 5 tricks. Judged, ranked, and sponsored — with a real prize.
+                            </Text>
+                            <Text size="xs" c="dark.7" fw={700}>
+                                Coming Soon · Sponsored · Judged
+                            </Text>
+                        </Stack>
+                    </Box>
+                    <Box
+                        onClick={onCreate}
+                        style={{
+                            cursor: createLoading ? "wait" : "pointer",
+                            borderRadius: 14,
+                            padding: 20,
+                            background: "var(--mantine-color-dark-6)",
+                            border: "1px solid var(--mantine-color-dark-4)",
+                        }}
+                    >
+                        <Stack gap={6}>
+                            <Group gap={6}>
+                                <Gamepad2 size={16} />
+                                <Badge color="blue" variant="light" size="sm">
+                                    Classic
+                                </Badge>
+                            </Group>
+                            <Title order={4} fw={700}>
+                                Game of S.K.A.T.E.
+                            </Title>
+                            <Text size="sm" c="dimmed">
+                                Challenge a friend head-to-head. First to spell S.K.A.T.E. loses.
+                            </Text>
+                            <Text size="xs" c="dimmed" fw={700}>
+                                1v1 · Live · Instant match
+                            </Text>
+                        </Stack>
+                    </Box>
+                </Group>
             </motion.div>
 
             <motion.div
