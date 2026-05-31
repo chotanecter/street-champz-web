@@ -1,10 +1,11 @@
 // src/app/checkin/spots/components/SpotList.tsx
-// Classic button-style list: thumbnail + name/meta + collected check circle.
+// Classic button-style list: name/meta + collected check circle.
+// (No left-side icon/thumbnail — removed per design.)
 
 import { Badge, Group, Stack, Text } from "@mantine/core";
-import { Check, MapPin } from "lucide-react";
+import { Check } from "lucide-react";
 
-import { ACCESS_LABEL, spotGlyph } from "./spotVisuals";
+import { ACCESS_LABEL } from "./spotVisuals";
 import { distanceMeters, formatDistance } from "../geo";
 import type { GeoCoords, Spot } from "../types";
 
@@ -42,32 +43,9 @@ export function SpotList({ spots, isCollected, onSelect, userCoords }: SpotListP
               background: "var(--mantine-color-dark-6)",
               border: `1px solid ${collected ? "rgba(232,115,44,.4)" : "var(--mantine-color-dark-4)"}`,
               borderRadius: 13,
-              padding: "9px 11px",
+              padding: "11px 13px",
             }}
           >
-            <div
-              style={{
-                width: 46,
-                height: 46,
-                borderRadius: 10,
-                flexShrink: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 20,
-                background: knobbed
-                  ? "linear-gradient(135deg,#3a2226,#241416)"
-                  : "linear-gradient(135deg,#33333d,#222)",
-                overflow: "hidden",
-              }}
-            >
-              {spot.photoUrl ? (
-                <img src={spot.photoUrl} alt={spot.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              ) : (
-                spotGlyph(spot)
-              )}
-            </div>
-
             <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
               <Text fw={700} size="sm" truncate>
                 {spot.name}
@@ -101,7 +79,7 @@ export function SpotList({ spots, isCollected, onSelect, userCoords }: SpotListP
                 color: collected ? "#1a1a1a" : "var(--mantine-color-dark-2)",
               }}
             >
-              {collected ? <Check size={15} strokeWidth={3} /> : <MapPin size={13} />}
+              {collected ? <Check size={15} strokeWidth={3} /> : null}
             </div>
           </Group>
         );

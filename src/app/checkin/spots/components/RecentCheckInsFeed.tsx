@@ -1,9 +1,8 @@
 // src/app/checkin/spots/components/RecentCheckInsFeed.tsx
-// Compact "recent check-ins" mini feed: Username · City · Time.
-// Shows the signed-in user's OWN check-ins from BOTH systems — the presence
-// check-in (top "Check In" button) and spot collects — merged with seeded
-// other-skater activity for mock mode. Real "You" rows always sort to the top
-// when fresh, so pressing Check In shows you immediately.
+// One unified recent check-ins feed: Username · City · Time.
+// Sources REAL check-ins only (no fake data) — the presence check-in (top
+// "Check In" button) and any geo/sticker spot collect. In mock mode that's the
+// signed-in user; Phase 2 swaps to the global backend feed of all skaters.
 
 import { useMemo } from "react";
 import { Avatar, Box, Group, ScrollArea, Stack, Text } from "@mantine/core";
@@ -11,7 +10,14 @@ import { Clock } from "lucide-react";
 
 import { useSpots } from "../SpotsContext";
 import { useCheckIn } from "../../CheckInContext";
-import { seedFeed, type FeedEntry } from "../mockFeed";
+import { useAuth } from "../../../auth/context";
+
+interface Row {
+  id: string;
+  username: string;
+  city: string;
+  timestamp: number;
+}
 
 function timeAgo(ts: number): string {
   const s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
@@ -23,43 +29,43 @@ function timeAgo(ts: number): string {
   return `${Math.floor(h / 24)}d ago`;
 }
 
-const MAX_ROWS = 8;
+const MAX_ROWS = 12;
 
 export function RecentCheckInsFeed() {
   const { checkIns, spotById, userId } = useSpots();
   const presence = useCheckIn();
+  const auth = useAuth() as { username?: string };
+  const myName = auth?.username || "You";
 
-  const entries = useMemo<FeedEntry[]>(() => {
-    const mine: FeedEntry[] = [];
+  const rows = useMemo<Row[]>(() => {
+    const out: Row[] = [];
 
-    // 1) presence check-in (the top "Check In" button)
+    // 1) presence check-in (top "Check In" button)
     if (presence.myCheckIn) {
       const ts = new Date(presence.myCheckIn.checkedInAt).getTime();
-      mine.push({
+      out.push({
         id: `presence_${ts}`,
-        username: "You",
+        username: myName,
         city: presence.myCheckIn.spotLabel || "Los Angeles",
         timestamp: Number.isNaN(ts) ? Date.now() : ts,
       });
     }
 
-    // 2) spot collects (tap-in at a curated spot)
+    // 2) sticker / spot collects
     checkIns
       .filter((c) => c.userId === userId)
       .forEach((c) => {
         const spot = spotById(c.spotId);
-        mine.push({
+        out.push({
           id: c.id,
-          username: "You",
+          username: myName,
           city: spot?.neighborhood || spot?.name || "Los Angeles",
           timestamp: c.timestamp,
         });
       });
 
-    return [...mine, ...seedFeed()]
-      .sort((a, b) => b.timestamp - a.timestamp)
-      .slice(0, MAX_ROWS);
-  }, [checkIns, spotById, userId, presence.myCheckIn]);
+    return out.sort((a, b) => b.timestamp - a.timestamp).slice(0, MAX_ROWS);
+  }, [checkIns, spotById, userId, presence.myCheckIn, myName]);
 
   return (
     <Box px="md" pt="xs">
@@ -68,24 +74,36 @@ export function RecentCheckInsFeed() {
         <Text fw={700} size="sm">Recent check-ins</Text>
       </Group>
 
-      <ScrollArea.Autosize mah={210} type="auto">
-        <Stack gap={6}>
-          {entries.map((e) => {
-            const isYou = e.username === "You";
-            return (
+      {rows.length === 0 ? (
+        <Box
+          style={{
+            background: "var(--mantine-color-dark-6)",
+            border: "1px solid var(--mantine-color-dark-4)",
+            borderRadius: 10,
+            padding: "14px 12px",
+          }}
+        >
+          <Text size="sm" c="dimmed" ta="center">
+            No check-ins yet. Tap in above or at a spot sticker to start the feed.
+          </Text>
+        </Box>
+      ) : (
+        <ScrollArea.Autosize mah={240} type="auto">
+          <Stack gap={6}>
+            {rows.map((e) => (
               <Group
                 key={e.id}
                 justify="space-between"
                 wrap="nowrap"
                 style={{
                   background: "var(--mantine-color-dark-6)",
-                  border: `1px solid ${isYou ? "rgba(232,115,44,.4)" : "var(--mantine-color-dark-4)"}`,
+                  border: "1px solid var(--mantine-color-dark-4)",
                   borderRadius: 10,
                   padding: "7px 10px",
                 }}
               >
                 <Group gap={9} wrap="nowrap" style={{ minWidth: 0 }}>
-                  <Avatar size={26} radius="xl" color={isYou ? "orange" : "blue"}>
+                  <Avatar size={26} radius="xl" color="orange">
                     {e.username.slice(0, 1).toUpperCase()}
                   </Avatar>
                   <Box style={{ minWidth: 0 }}>
@@ -97,10 +115,10 @@ export function RecentCheckInsFeed() {
                   {timeAgo(e.timestamp)}
                 </Text>
               </Group>
-            );
-          })}
-        </Stack>
-      </ScrollArea.Autosize>
+            ))}
+          </Stack>
+        </ScrollArea.Autosize>
+      )}
     </Box>
   );
 }

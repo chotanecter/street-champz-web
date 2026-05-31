@@ -3,7 +3,6 @@ import { useMissions } from "../../../missions/context";
 import { MissionCard } from "../../../../components";
 import { motion } from "framer-motion";
 import { staggerContainer } from "../../../../utils/animations";
-import { MapPin } from "lucide-react";
 import { SpotChallengesPanel } from "../../../checkin/spots/components/SpotChallengesPanel";
 
 export function Missions() {
@@ -46,7 +45,7 @@ export function Missions() {
         <Stack gap="lg" p="md">
             <Title order={2}>Missions & Quests</Title>
 
-            <Tabs defaultValue="daily" variant="pills">
+            <Tabs defaultValue="daily" variant="pills" styles={{ list: { flexWrap: "nowrap" }, tab: { fontSize: 11, paddingInline: 8, whiteSpace: "nowrap" } }}>
                 <Tabs.List grow>
                     <Tabs.Tab value="daily">
                         Daily ({dailyMissions.filter(m => m.completed && !m.claimed).length})
@@ -57,7 +56,7 @@ export function Missions() {
                     <Tabs.Tab value="lifetime">
                         Lifetime ({lifetimeMissions.filter(m => m.completed && !m.claimed).length})
                     </Tabs.Tab>
-                    <Tabs.Tab value="spots" leftSection={<MapPin size={16} />}>
+                    <Tabs.Tab value="spots">
                         Spots
                     </Tabs.Tab>
                 </Tabs.List>

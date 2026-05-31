@@ -24,6 +24,7 @@ import {
   Check,
   MapPin,
   MessageSquare,
+  Navigation,
   Newspaper,
   Smartphone,
   Trophy,
@@ -48,6 +49,29 @@ function timeAgo(ts: number): string {
 const DEV_BYPASS =
   (typeof window !== "undefined" && new URLSearchParams(window.location.search).has("dev")) ||
   Boolean(import.meta.env.DEV);
+
+/** Is the device an Apple platform? (used to default the Directions button). */
+function isApple(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+}
+
+function googleMapsUrl(spot: Spot): string {
+  const dest = spot.address
+    ? encodeURIComponent(spot.address)
+    : `${spot.lat},${spot.lng}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${dest}`;
+}
+
+function appleMapsUrl(spot: Spot): string {
+  const q = spot.address ? encodeURIComponent(spot.address) : `${spot.lat},${spot.lng}`;
+  return `https://maps.apple.com/?daddr=${q}`;
+}
+
+function openDirections(spot: Spot) {
+  const url = isApple() ? appleMapsUrl(spot) : googleMapsUrl(spot);
+  window.open(url, "_blank", "noopener,noreferrer");
+}
 
 export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () => void }) {
   const {
@@ -166,6 +190,17 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
             {DEV_BYPASS ? " (dev: GPS gate bypassed)" : " You must be within 100m."}
           </Text>
         )}
+
+        {/* Directions shortcut (Google / Apple Maps) */}
+        <Button
+          variant="light"
+          color="gray"
+          radius="md"
+          leftSection={<Navigation size={16} />}
+          onClick={() => openDirections(spot)}
+        >
+          Directions
+        </Button>
 
         <Tabs defaultValue="info" color="blue" keepMounted={false} mt="xs">
           <Tabs.List grow>
