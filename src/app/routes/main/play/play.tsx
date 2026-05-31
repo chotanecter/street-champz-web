@@ -1,11 +1,10 @@
-import { Box, Button, Divider, Group, Badge, Stack, Text, Title, ActionIcon, Loader } from "@mantine/core";
+import { Box, Button, Group, Badge, Stack, Text, Title, ActionIcon } from "@mantine/core";
 import { useAuth } from "../../../auth/context";
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
-import classes from "./play.module.css";
-import { Gamepad2, Users, Clock, X, Swords, Sparkles, MapPin, Lock } from "lucide-react";
+import { Gamepad2, Users, Clock, X, Sparkles, MapPin, Lock } from "lucide-react";
 import { useMyNotifications } from "../../../notifications/context";
-import { GameCard, UserAvatar } from "../../../../components";
+import { GameCard } from "../../../../components";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "../../../../utils/animations";
 import { notifications } from "@mantine/notifications";
@@ -18,16 +17,6 @@ interface Game {
     };
 }
 
-interface OnlinePlayer {
-    id: string;
-    username: string;
-    country?: string | null;
-    countryCode?: string | null;
-    city?: string | null;
-    hasAvatar?: boolean;
-    avatar?: string | null;
-}
-
 export function Play() {
     const auth = useAuth();
     const myNotifications = useMyNotifications();
@@ -35,8 +24,6 @@ export function Play() {
     const [createLoading, setCreateLoading] = useState(false);
     const [_, navigate] = useLocation();
     const [games, setGames] = useState<Game[]>([]);
-    const [, setOnlinePlayers] = useState<OnlinePlayer[]>([]);
-    const [, setChallengingId] = useState<string | null>(null);
 
     useEffect(() => {
         fetch(import.meta.env["VITE_API_BASE"] + "/games", {
@@ -46,13 +33,6 @@ export function Play() {
         }).then(response => response.json().then(games => {
             setGames(games);
         }));
-
-        fetch(import.meta.env["VITE_API_BASE"] + "/stats/online", {
-            headers: { "Authorization": "Bearer " + auth.token }
-        })
-            .then(r => r.json())
-            .then(data => setOnlinePlayers((data.players || []).filter((p: OnlinePlayer) => p.id !== auth.id)))
-            .catch(() => {});
 
         const unsubscribeInvitations = myNotifications.subscribe("INVITATION", data => {
             const gameId = data.gameId;
