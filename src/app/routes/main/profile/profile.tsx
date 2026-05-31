@@ -19,6 +19,7 @@ import { ENV } from "../../../../config/env";
 import { Trophy, Settings, HelpCircle, Star, Crown, Edit2, Camera, X, MapPin, Clock, Zap, ShoppingBag } from "lucide-react";
 import { useLocation } from "wouter";
 import classes from "./profile.module.css";
+import { SpotPassport } from "../../../checkin/spots/components/SpotPassport";
 
 export function Profile() {
     const auth = useAuth();
@@ -228,6 +229,11 @@ export function Profile() {
                         </div>
                     </div>
                 </Stack>
+            </GameCard>
+
+            {/* Skate Passport — spot check-in stamps */}
+            <GameCard>
+                <SpotPassport />
             </GameCard>
 
             {/* Store */}

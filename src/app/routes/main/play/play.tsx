@@ -129,11 +129,21 @@ export function Play() {
                 variants={fadeInUp}
             >
                 <Box ta="center" p="lg">
-                    <Title order={2} fw={500}>
+                    <Title
+                        order={2}
+                        c="white"
+                        style={{
+                            fontFamily: "'Permanent Marker', cursive",
+                            fontWeight: 400,
+                            letterSpacing: "0.5px",
+                            transform: "rotate(-1.5deg)",
+                            textShadow: "2px 2px 0 rgba(232,115,44,0.45)",
+                        }}
+                    >
                         Welcome, {auth.username}!
                     </Title>
 
-                    <Text c="dimmed">
+                    <Text c="white" style={{ fontFamily: "'Permanent Marker', cursive", opacity: 0.92 }}>
                         Jump back into an active game or start your own game to play!
                     </Text>
                 </Box>
