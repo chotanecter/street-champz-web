@@ -19,7 +19,8 @@ import { ContestsProvider } from "../../contests";
 import { SpotsProvider } from "../../checkin/spots";
 const ContestsIndex = lazy(() => import("../contests/contests"));
 const ContestDetail = lazy(() => import("../contests/contest-detail"));
-const SpotGamePage = lazy(() => import("../../checkin/spots/pages/SpotGamePage").then(m => ({ default: m.SpotGamePage })));
+import { CheckInProvider } from "../../checkin/CheckInContext";
+const CheckInHome = lazy(() => import("../../checkin/spots/pages/CheckInHome").then(m => ({ default: m.CheckInHome })));
 import { useRewards } from "../../rewards/context";
 import { useEconomy } from "../../economy/context";
 import { useAchievements } from "../../achievements/context";
@@ -128,11 +129,13 @@ export function Main() {
                 </Route>
 
                 <Route path="/checkin" nest>
-                    <SpotsProvider>
-                        <Suspense fallback={null}>
-                            <SpotGamePage />
-                        </Suspense>
-                    </SpotsProvider>
+                    <CheckInProvider>
+                        <SpotsProvider>
+                            <Suspense fallback={null}>
+                                <CheckInHome />
+                            </Suspense>
+                        </SpotsProvider>
+                    </CheckInProvider>
                 </Route>
 
                 <Route path="/contests/:slug">
