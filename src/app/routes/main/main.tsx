@@ -16,10 +16,10 @@ import { Settings } from "./settings/settings";
 import { Help } from "./help/help";
 import { Shop } from "./shop/shop";
 import { ContestsProvider } from "../../contests";
-import { CheckInProvider } from "../../checkin/CheckInContext";
+import { SpotsProvider } from "../../checkin/spots";
 const ContestsIndex = lazy(() => import("../contests/contests"));
 const ContestDetail = lazy(() => import("../contests/contest-detail"));
-const CheckInPage = lazy(() => import("../../checkin/pages/CheckInPage").then(m => ({ default: m.CheckInPage })));
+const SpotGamePage = lazy(() => import("../../checkin/spots/pages/SpotGamePage").then(m => ({ default: m.SpotGamePage })));
 import { useRewards } from "../../rewards/context";
 import { useEconomy } from "../../economy/context";
 import { useAchievements } from "../../achievements/context";
@@ -127,12 +127,12 @@ export function Main() {
                     <Shop />
                 </Route>
 
-                <Route path="/checkin">
-                    <CheckInProvider>
+                <Route path="/checkin" nest>
+                    <SpotsProvider>
                         <Suspense fallback={null}>
-                            <CheckInPage />
+                            <SpotGamePage />
                         </Suspense>
-                    </CheckInProvider>
+                    </SpotsProvider>
                 </Route>
 
                 <Route path="/contests/:slug">
