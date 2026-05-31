@@ -163,9 +163,6 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
           )}
         </Group>
 
-        {/* Location preview: Photos / Map toggle */}
-        <SpotPreview spot={spot} />
-
         {/* Tap-in result */}
         {result && (
           <Alert color={result.ok ? "blue" : "red"} variant="light" p="xs"
@@ -217,6 +214,24 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
           {/* INFO */}
           <Tabs.Panel value="info" pt="sm">
             <Text size="sm" c="dimmed">{spot.description}</Text>
+
+            {/* Photos / Map preview */}
+            <Box mt="sm">
+              <SpotPreview spot={spot} />
+            </Box>
+
+            {/* Where the sticker is */}
+            <Box mt="sm" style={{ borderLeft: "2px solid var(--mantine-color-blue-6)", paddingLeft: 10 }}>
+              <Group gap={6} mb={2}>
+                <Smartphone size={14} color="var(--mantine-color-blue-5)" />
+                <Text size="sm" fw={700}>Where's the sticker?</Text>
+              </Group>
+              <Text size="xs" c="dimmed">
+                {spot.stickerLocation
+                  ? spot.stickerLocation
+                  : `Look for the StreetChampz NFC sticker at ${spot.name} (${spot.address}). It's posted at the main entrance to the spot — tap your phone to it to check in. Exact placement photo coming soon.`}
+              </Text>
+            </Box>
             <Group gap={6} mt="sm">
               {spot.features.map((f) => (
                 <Badge key={f} variant="light" color="gray" size="sm">{f}</Badge>

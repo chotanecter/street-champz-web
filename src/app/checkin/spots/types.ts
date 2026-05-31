@@ -20,6 +20,7 @@ export interface Spot {
   neighborhood: string;
   photoUrl?: string;
   photos?: string[];   // gallery of the spot (where the sticker is)
+  stickerLocation?: string;  // human description of where the NFC sticker is mounted
   description: string;
   features: string[];          // ["ledges","stairs","banks"]
   nfcTagId?: string;           // the one main sticker for this spot
