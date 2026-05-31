@@ -19,6 +19,7 @@ export interface Spot {
   address: string;
   neighborhood: string;
   photoUrl?: string;
+  photos?: string[];   // gallery of the spot (where the sticker is)
   description: string;
   features: string[];          // ["ledges","stairs","banks"]
   nfcTagId?: string;           // the one main sticker for this spot

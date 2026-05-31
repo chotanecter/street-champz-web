@@ -29,7 +29,7 @@ export function SpotGameSection() {
   }, []);
 
   return (
-    <Box px="md" pb={96}>
+    <Box id="spot-game" px="md" pb={96}>
       <Divider my="md" />
 
       <Group justify="space-between" align="flex-start" wrap="nowrap" mb="sm">

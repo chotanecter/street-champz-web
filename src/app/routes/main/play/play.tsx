@@ -3,7 +3,7 @@ import { useAuth } from "../../../auth/context";
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import classes from "./play.module.css";
-import { Gamepad2, Users, Clock, X, Swords, Sparkles } from "lucide-react";
+import { Gamepad2, Users, Clock, X, Swords, Sparkles, MapPin, Lock } from "lucide-react";
 import { useMyNotifications } from "../../../notifications/context";
 import { GameCard, UserAvatar } from "../../../../components";
 import { motion } from "framer-motion";
@@ -85,6 +85,13 @@ export function Play() {
             unsubscribeInvitations();
         };
     }, []);
+
+    const goCheckInGame = () => {
+        navigate("/checkin");
+        setTimeout(() => {
+            document.getElementById("spot-game")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 500);
+    };
 
     const onCreate = async () => {
         setCreateLoading(true);
@@ -258,6 +265,66 @@ export function Play() {
                             </Text>
                             <Text size="xs" c="dimmed" fw={700}>
                                 1v1 · Live · Instant match
+                            </Text>
+                        </Stack>
+                    </Box>
+                </Group>
+
+                <Group grow align="stretch" wrap="nowrap" mt="md">
+                    <Box
+                        onClick={goCheckInGame}
+                        style={{
+                            cursor: "pointer",
+                            borderRadius: 14,
+                            padding: 20,
+                            background: "linear-gradient(135deg, #ff9555 0%, #e8732c 55%, #b3551d 100%)",
+                            boxShadow: "0 0 20px rgba(232, 115, 44, 0.45)",
+                            border: "1px solid rgba(255, 255, 255, 0.25)",
+                        }}
+                    >
+                        <Stack gap={6}>
+                            <Group gap={6}>
+                                <MapPin size={16} color="#1a1a1a" />
+                                <Badge color="dark" variant="filled" size="sm">
+                                    Live
+                                </Badge>
+                            </Group>
+                            <Title order={4} c="dark.9" fw={800}>
+                                LA Check-In Game
+                            </Title>
+                            <Text size="sm" c="dark.8">
+                                Tap in at real LA skate spots, earn points, and climb the leaderboard.
+                            </Text>
+                            <Text size="xs" c="dark.7" fw={700}>
+                                Sponsored by Stevie Williams
+                            </Text>
+                        </Stack>
+                    </Box>
+                    <Box
+                        style={{
+                            cursor: "not-allowed",
+                            opacity: 0.55,
+                            borderRadius: 14,
+                            padding: 20,
+                            background: "var(--mantine-color-dark-6)",
+                            border: "1px solid var(--mantine-color-dark-4)",
+                        }}
+                    >
+                        <Stack gap={6}>
+                            <Group gap={6}>
+                                <Lock size={16} />
+                                <Badge color="gray" variant="light" size="sm">
+                                    Coming Soon
+                                </Badge>
+                            </Group>
+                            <Title order={4} fw={700}>
+                                Josh Kalis NY Check-In Challenge
+                            </Title>
+                            <Text size="sm" c="dimmed">
+                                Josh Kalis takes the game to New York. Drops soon.
+                            </Text>
+                            <Text size="xs" c="dimmed" fw={700}>
+                                Coming Soon · NY Edition
                             </Text>
                         </Stack>
                     </Box>

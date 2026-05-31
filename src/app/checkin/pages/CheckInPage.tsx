@@ -19,6 +19,7 @@ import { motion } from 'framer-motion';
 import { useCheckIn } from '../CheckInContext';
 import { timeAgo } from '../geo';
 import { SkaterCard } from '../components/SkaterCard';
+import { RecentCheckInsFeed } from '../spots/components/RecentCheckInsFeed';
 
 const MotionDiv = motion.div;
 
@@ -40,7 +41,7 @@ export function CheckInPage() {
   const checkedIn = status === 'checked-in' && myCheckIn;
 
   return (
-    <Box p="md" pb={96}>
+    <Box p="md" pb="lg">
       <Group justify="space-between" align="flex-start" mb="md">
         <div>
           <Title order={2}>Check In</Title>
@@ -162,6 +163,8 @@ export function CheckInPage() {
           )}
         </Stack>
       )}
+
+      <RecentCheckInsFeed />
     </Box>
   );
 }

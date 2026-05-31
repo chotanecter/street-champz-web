@@ -34,6 +34,7 @@ import {
 import { useSpots } from "../SpotsContext";
 import { POINTS } from "../constants";
 import { ACCESS_LABEL, spotGlyph } from "./spotVisuals";
+import { SpotPreview } from "./SpotPreview";
 import type { CollectResult, Spot } from "../types";
 
 function timeAgo(ts: number): string {
@@ -161,6 +162,9 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
             </Badge>
           )}
         </Group>
+
+        {/* Location preview: Photos / Map toggle */}
+        <SpotPreview spot={spot} />
 
         {/* Tap-in result */}
         {result && (

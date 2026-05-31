@@ -68,7 +68,7 @@ export function RecentCheckInsFeed() {
   }, [checkIns, spotById, userId, presence.myCheckIn, myName]);
 
   return (
-    <Box px="md" pt="xs">
+    <Box px={0} pt="md">
       <Group gap={6} mb={8}>
         <Clock size={15} color="var(--mantine-color-blue-5)" />
         <Text fw={700} size="sm">Recent check-ins</Text>
