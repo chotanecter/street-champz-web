@@ -119,7 +119,7 @@ export function Leaderboard() {
                             <Crown size={24} className={classes.trophyIcon} />
                             <Title order={3}>Season Competition</Title>
                         </Group>
-                        <Text size="sm" c="dimmed">
+                        <Text size="sm" c="white" style={{ fontFamily: "'Permanent Marker', cursive" }}>
                             Most points at season end wins a special prize!
                         </Text>
                     </div>
@@ -136,7 +136,7 @@ export function Leaderboard() {
                 <Group align="center" gap="xl">
                     {/* User Rank Display */}
                     <div className={classes.rankDisplay}>
-                        <Text size="xs" c="dimmed" ta="center" mb={4}>YOUR RANK</Text>
+                        <Text size="xs" c="white" ta="center" mb={4} style={{ fontFamily: "'Permanent Marker', cursive" }}>YOUR RANK</Text>
                         <Text 
                             size="3rem" 
                             fw={900} 
@@ -163,7 +163,7 @@ export function Leaderboard() {
                             <Text size="xl" fw={700} className={classes.pointsText}>
                                 {points.toLocaleString()}
                             </Text>
-                            <Text size="sm" c="dimmed">
+                            <Text size="sm" c="white" style={{ fontFamily: "'Permanent Marker', cursive" }}>
                                 points
                             </Text>
                         </Group>
@@ -175,13 +175,13 @@ export function Leaderboard() {
                         ) : (
                             <Group gap={4}>
                                 <TrendingUp size={14} color="var(--mantine-color-orange-5)" />
-                                <Text size="sm" c="dimmed">
+                                <Text size="sm" c="white" style={{ fontFamily: "'Permanent Marker', cursive" }}>
                                     <Text span fw={600} c="orange">{pointsToFirst.toLocaleString()}</Text> points to reach #1
                                 </Text>
                             </Group>
                         )}
 
-                        <Text size="xs" c="dimmed">
+                        <Text size="xs" c="white" style={{ fontFamily: "'Permanent Marker', cursive" }}>
                             Compete to be #1 when the season ends!
                         </Text>
                     </Stack>

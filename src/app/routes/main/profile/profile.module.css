@@ -19,6 +19,14 @@
         align-items: center;
         text-align: center;
     }
+    .profileInfo {
+        align-items: center;
+    }
+    .pointsBadge {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .avatarSection {
@@ -47,7 +55,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     min-width: 0;
+    width: 100%;
 }
 
 .username {

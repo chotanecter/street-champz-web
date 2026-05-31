@@ -5,7 +5,6 @@
 
 import { API_BASE, CHECKIN, FORCE_MOCK, getAuthToken } from './constants';
 import { distanceMeters } from './geo';
-import { mockNearbySkaters } from './mockData';
 import { clearMyCheckIn, loadMyCheckIn, saveMyCheckIn } from './storage';
 import type {
   CheckInResponse,
@@ -59,7 +58,7 @@ export async function checkIn(
     checkedInAt: new Date().toISOString(),
     spotLabel: spotLabel ?? null,
   });
-  return { success: true, nearbySkaters: mockNearbySkaters(coords) };
+  return { success: true, nearbySkaters: [] };
 }
 
 // ---------------------------------------------------------------------------
@@ -102,7 +101,7 @@ export async function getNearby(): Promise<NearbyResponse> {
   return {
     isCheckedIn: true,
     myCheckIn: mine,
-    nearbySkaters: mockNearbySkaters(mine.location),
+    nearbySkaters: [],
   };
 }
 
