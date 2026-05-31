@@ -17,6 +17,7 @@ import { Help } from "./help/help";
 import { Shop } from "./shop/shop";
 import { ContestsProvider } from "../../contests";
 import { SpotsProvider } from "../../checkin/spots";
+import { MusicProvider } from "../../music/MusicContext";
 const ContestsIndex = lazy(() => import("../contests/contests"));
 const ContestDetail = lazy(() => import("../contests/contest-detail"));
 import { CheckInProvider } from "../../checkin/CheckInContext";
@@ -84,6 +85,7 @@ export function Main() {
     }, []);
 
     return (
+        <MusicProvider>
         <div className={classes.root}>
             <Header />
 
@@ -174,5 +176,6 @@ export function Main() {
                 onClaim={claimDailyReward}
             />
         </div>
+        </MusicProvider>
     );
 };

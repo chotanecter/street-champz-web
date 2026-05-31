@@ -3,6 +3,7 @@ import { Settings as SettingsIcon, Trash2, RefreshCw, LogOut } from "lucide-reac
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { GameCard } from "../../../../components";
+import { SongList } from "../../../music/SongList";
 import { ENV } from "../../../../config/env";
 import { LANGUAGES } from "../../../../i18n";
 import { useAuth } from "../../../auth/context";
@@ -39,6 +40,11 @@ export function Settings() {
         <SettingsIcon size={28} style={{ verticalAlign: "middle", marginRight: 8 }} />
         {t("settings.title")}
       </Title>
+
+      <GameCard>
+        <SongList />
+      </GameCard>
+
 
       <Stack gap="lg">
         {/* Audio Settings */}

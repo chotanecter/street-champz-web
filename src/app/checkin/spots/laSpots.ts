@@ -11,6 +11,16 @@ import type { Spot } from "./types";
 const SPONSOR = { by: "Stevie Williams", note: "LA Edition featured spot" };
 
 export const LA_SPOTS: Spot[] = [
+  // JKwon Plaza pinned to top of the LA list
+  {
+    id: "spot_jkwon", slug: "jkwon-plaza", name: "JKwon Plaza",
+    type: "street", access: "skateable",
+    lat: 34.0625, lng: -118.3010, coordsVerified: false,
+    address: "Koreatown, Los Angeles, CA", neighborhood: "Koreatown",
+    description: "A K-town plaza spot with ledges — a newer addition to the LA street rotation.",
+    features: ["ledges", "plaza"],
+    nfcTagId: "tag_jkwon", checkInCount: 150, edition: "la",
+  },
   // ---- Skateable parks & plazas (sticker + skate) ----
   {
     id: "spot_venice", slug: "venice-beach-skatepark", name: "Venice Beach Skatepark",
@@ -175,15 +185,6 @@ export const LA_SPOTS: Spot[] = [
     description: "A natural transition ditch tucked in Griffith Park — carve and grind the banks.",
     features: ["ditch", "transition"],
     nfcTagId: "tag_griffithditch", checkInCount: 180, edition: "la",
-  },
-  {
-    id: "spot_jkwon", slug: "jkwon-plaza", name: "JKwon Plaza",
-    type: "street", access: "skateable",
-    lat: 34.0625, lng: -118.3010, coordsVerified: false,
-    address: "Koreatown, Los Angeles, CA", neighborhood: "Koreatown",
-    description: "A K-town plaza spot with ledges — a newer addition to the LA street rotation.",
-    features: ["ledges", "plaza"],
-    nfcTagId: "tag_jkwon", checkInCount: 150, edition: "la",
   },
 ];
 

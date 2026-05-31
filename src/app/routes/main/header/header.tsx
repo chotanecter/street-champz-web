@@ -7,6 +7,7 @@ import { useSocial } from "../../../social/context";
 import { useState, useEffect } from "react";
 import { ENV } from "../../../../config/env";
 import { UserAvatar } from "../../../../components";
+import { MiniPlayer } from "../../../music/MiniPlayer";
 
 interface OnlinePlayer {
     id: string;
@@ -70,6 +71,9 @@ export function Header() {
                     {onlineCount} Online
                 </Badge>
             </Group>
+
+            {/* Center: music mini player */}
+            <MiniPlayer />
 
             {/* Right: Notifications */}
             <Group justify="end" gap="xs">
