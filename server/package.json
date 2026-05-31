@@ -1,0 +1,27 @@
+{
+  "name": "street-champz-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "StreetChampz backend API (Node + Express + SurrealDB) \u2014 Phase 2",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json && node -e \"require('fs').copyFileSync('src/schema.surql','dist/schema.surql')\"",
+    "start": "node dist/index.js",
+    "migrate": "tsx src/migrate.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "surrealdb": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}
