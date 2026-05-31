@@ -16,10 +16,9 @@ import { useProfile } from "../../../profile/context";
 import { GameCard, PointsDisplay } from "../../../../components";
 import { ProfileAvatar } from "../../../../components/SkaterAvatar";
 import { ENV } from "../../../../config/env";
-import { Trophy, Settings, HelpCircle, Star, Crown, Edit2, Camera, X, MapPin, Clock, Zap } from "lucide-react";
+import { Trophy, Settings, HelpCircle, Star, Crown, Edit2, Camera, X, MapPin, Clock, Zap, ShoppingBag } from "lucide-react";
 import { useLocation } from "wouter";
 import classes from "./profile.module.css";
-import { Shop } from "../shop/shop";
 
 export function Profile() {
     const auth = useAuth();
@@ -232,7 +231,21 @@ export function Profile() {
             </GameCard>
 
             {/* Store */}
-            <Shop />
+            <GameCard
+                variant="gradient"
+                onClick={() => navigate("/shop")}
+                style={{ cursor: "pointer" }}
+            >
+                <Group justify="space-between" align="center">
+                    <Group gap="md">
+                        <ShoppingBag size={32} color="var(--mantine-color-blue-5)" />
+                        <div>
+                            <Text fw={600}>Store</Text>
+                            <Text size="sm" c="dimmed">Buy merch. Earn points.</Text>
+                        </div>
+                    </Group>
+                </Group>
+            </GameCard>
 
             {/* Achievements */}
             <GameCard 

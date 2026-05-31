@@ -1,5 +1,6 @@
 import { Title, Group, Text, Badge, Button, SimpleGrid } from "@mantine/core";
-import { Star, ExternalLink, Clock, Flame, Sparkles } from "lucide-react";
+import { Star, ExternalLink, Clock, Flame, Sparkles, ArrowLeft } from "lucide-react";
+import { useLocation } from "wouter";
 import { useEconomy } from "../../../economy/context";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -143,6 +144,7 @@ const SHOP_ITEMS: ShopItem[] = [
 
 export function Shop() {
   const { points, getDaysRemaining } = useEconomy();
+  const [, navigate] = useLocation();
   const [modalOpened, setModalOpened] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ShopItem | null>(null);
 
@@ -237,6 +239,18 @@ export function Shop() {
 
   return (
     <div className={classes.root}>
+      {/* Back to Profile */}
+      <Button
+        variant="subtle"
+        color="gray"
+        size="compact-sm"
+        leftSection={<ArrowLeft size={16} />}
+        onClick={() => navigate("/profile")}
+        mb="sm"
+      >
+        Back
+      </Button>
+
       {/* Header */}
       <div className={classes.shopHeader}>
         <div className={classes.headerLeft}>
