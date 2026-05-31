@@ -3,6 +3,8 @@ import { useMissions } from "../../../missions/context";
 import { MissionCard } from "../../../../components";
 import { motion } from "framer-motion";
 import { staggerContainer } from "../../../../utils/animations";
+import { MapPin } from "lucide-react";
+import { SpotChallengesPanel } from "../../../checkin/spots/components/SpotChallengesPanel";
 
 export function Missions() {
     const { missions, claimMissionReward } = useMissions();
