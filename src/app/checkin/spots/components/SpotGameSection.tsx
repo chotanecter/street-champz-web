@@ -3,7 +3,7 @@
 // List is the default view; the map is compact. Owns the selected-spot sheet.
 
 import { useEffect, useState } from "react";
-import { Box, Divider, Group, Stack, Text } from "@mantine/core";
+import { Box, Divider, Group, Text } from "@mantine/core";
 
 import { useSpots } from "../SpotsContext";
 import { SPOT_GAME } from "../constants";
