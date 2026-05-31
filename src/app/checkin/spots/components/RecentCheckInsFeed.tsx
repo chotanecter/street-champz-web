@@ -1,13 +1,16 @@
 // src/app/checkin/spots/components/RecentCheckInsFeed.tsx
 // Compact "recent check-ins" mini feed: Username · City · Time.
-// Merges the signed-in user's real spot check-ins with seeded other-skater
-// activity (mock mode). Sits under the presence check-in on /checkin.
+// Shows the signed-in user's OWN check-ins from BOTH systems — the presence
+// check-in (top "Check In" button) and spot collects — merged with seeded
+// other-skater activity for mock mode. Real "You" rows always sort to the top
+// when fresh, so pressing Check In shows you immediately.
 
 import { useMemo } from "react";
 import { Avatar, Box, Group, ScrollArea, Stack, Text } from "@mantine/core";
 import { Clock } from "lucide-react";
 
 import { useSpots } from "../SpotsContext";
+import { useCheckIn } from "../../CheckInContext";
 import { seedFeed, type FeedEntry } from "../mockFeed";
 
 function timeAgo(ts: number): string {
@@ -24,24 +27,39 @@ const MAX_ROWS = 8;
 
 export function RecentCheckInsFeed() {
   const { checkIns, spotById, userId } = useSpots();
+  const presence = useCheckIn();
 
   const entries = useMemo<FeedEntry[]>(() => {
-    // the signed-in user's real spot check-ins → feed rows
-    const mine: FeedEntry[] = checkIns
+    const mine: FeedEntry[] = [];
+
+    // 1) presence check-in (the top "Check In" button)
+    if (presence.myCheckIn) {
+      const ts = new Date(presence.myCheckIn.checkedInAt).getTime();
+      mine.push({
+        id: `presence_${ts}`,
+        username: "You",
+        city: presence.myCheckIn.spotLabel || "Los Angeles",
+        timestamp: Number.isNaN(ts) ? Date.now() : ts,
+      });
+    }
+
+    // 2) spot collects (tap-in at a curated spot)
+    checkIns
       .filter((c) => c.userId === userId)
-      .map((c) => {
+      .forEach((c) => {
         const spot = spotById(c.spotId);
-        return {
+        mine.push({
           id: c.id,
           username: "You",
           city: spot?.neighborhood || spot?.name || "Los Angeles",
           timestamp: c.timestamp,
-        };
+        });
       });
+
     return [...mine, ...seedFeed()]
       .sort((a, b) => b.timestamp - a.timestamp)
       .slice(0, MAX_ROWS);
-  }, [checkIns, spotById, userId]);
+  }, [checkIns, spotById, userId, presence.myCheckIn]);
 
   return (
     <Box px="md" pt="xs">

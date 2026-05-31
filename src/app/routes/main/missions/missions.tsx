@@ -55,6 +55,9 @@ export function Missions() {
                     <Tabs.Tab value="lifetime">
                         Lifetime ({lifetimeMissions.filter(m => m.completed && !m.claimed).length})
                     </Tabs.Tab>
+                    <Tabs.Tab value="spots" leftSection={<MapPin size={16} />}>
+                        Spots
+                    </Tabs.Tab>
                 </Tabs.List>
 
                 <Tabs.Panel value="daily" pt="md">
@@ -67,6 +70,9 @@ export function Missions() {
 
                 <Tabs.Panel value="lifetime" pt="md">
                     {renderMissions(lifetimeMissions)}
+                </Tabs.Panel>
+                <Tabs.Panel value="spots" pt="md">
+                    <SpotChallengesPanel />
                 </Tabs.Panel>
             </Tabs>
         </Stack>
