@@ -157,7 +157,11 @@ export function App() {
                     dark: 6,
                     light: 6
                 },
-                primaryColor: "blue"
+                primaryColor: "blue",
+                headings: { fontFamily: "'Permanent Marker', cursive" },
+                components: {
+                    Title: { styles: { root: { fontFamily: "'Permanent Marker', cursive", color: "#ffffff", letterSpacing: "0.3px" } } }
+                }
             }}
             defaultColorScheme="dark"
         >
