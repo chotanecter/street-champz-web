@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import classes from "./navbar.module.css";
 import type { ReactNode } from "react";
-import { Gamepad2, Trophy, User, ShoppingBag, Target, MapPin } from "lucide-react";
+import { Gamepad2, Trophy, User, Target, MapPin } from "lucide-react";
 
 interface NavLink {
     nameKey: string;
@@ -30,11 +30,6 @@ const LINKS: NavLink[] = [
         nameKey: "nav.missions",
         path: "/missions",
         icon: <Target />
-    },
-    {
-        nameKey: "nav.shop",
-        path: "/shop",
-        icon: <ShoppingBag />
     },
     {
         nameKey: "nav.profile",

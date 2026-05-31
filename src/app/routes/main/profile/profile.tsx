@@ -19,6 +19,7 @@ import { ENV } from "../../../../config/env";
 import { Trophy, Settings, HelpCircle, Star, Crown, Edit2, Camera, X, MapPin, Clock, Zap } from "lucide-react";
 import { useLocation } from "wouter";
 import classes from "./profile.module.css";
+import { Shop } from "../shop/shop";
 
 export function Profile() {
     const auth = useAuth();
@@ -229,6 +230,9 @@ export function Profile() {
                     </div>
                 </Stack>
             </GameCard>
+
+            {/* Store */}
+            <Shop />
 
             {/* Achievements */}
             <GameCard 

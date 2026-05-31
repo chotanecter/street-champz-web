@@ -14,9 +14,14 @@ export const CHECKIN = {
   METERS_PER_MILE: 1609.34,
 } as const;
 
-/** API base (e.g. https://api.streetchampz.com). Empty => same-origin /check-in. */
+/**
+ * API base — same convention the rest of the app uses (ContestsContext, env.ts):
+ * VITE_API_BASE when set (Railway host in production), else "/api" which Vite's
+ * dev server proxies to the backend (stripping the /api prefix). So requests go
+ * to `<host>/check-in` in prod and `localhost:3000/check-in` in dev.
+ */
 export const API_BASE =
-  (import.meta.env.VITE_API_BASE as string | undefined)?.replace(/\/$/, '') ?? '';
+  ((import.meta.env.VITE_API_BASE as string | undefined) || '/api').replace(/\/$/, '');
 
 /** Force mock mode (shares the existing flag used by Contests). */
 export const FORCE_MOCK = import.meta.env.VITE_CONTESTS_MOCK === 'true';
