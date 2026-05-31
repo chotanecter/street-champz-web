@@ -29,7 +29,7 @@ export function UserAvatar({ userId, username, size = "md", localAvatar }: UserA
             return;
         }
         // Fetch from backend
-        fetch(ENV.apiBaseUrl + "/avatar/" + userId)
+        fetch(ENV.apiBaseUrl + "/users/" + userId + "/avatar")
             .then(r => r.ok ? r.json() : null)
             .then(data => {
                 if (data?.avatar) setAvatarSrc(data.avatar);
