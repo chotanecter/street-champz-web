@@ -16,8 +16,10 @@ import { Settings } from "./settings/settings";
 import { Help } from "./help/help";
 import { Shop } from "./shop/shop";
 import { ContestsProvider } from "../../contests";
+import { CheckInProvider } from "../../checkin/CheckInContext";
 const ContestsIndex = lazy(() => import("../contests/contests"));
 const ContestDetail = lazy(() => import("../contests/contest-detail"));
+const CheckInPage = lazy(() => import("../../checkin/pages/CheckInPage").then(m => ({ default: m.CheckInPage })));
 import { useRewards } from "../../rewards/context";
 import { useEconomy } from "../../economy/context";
 import { useAchievements } from "../../achievements/context";
@@ -28,17 +30,17 @@ const ONBOARDING_KEY = "street-champz-onboarding-completed";
 export function Main() {
     const { subscribe } = useMyNotifications();
     const [_, navigate] = useLocation();
-    const { 
-        dailyRewards, 
-        currentStreak, 
-        canClaimDaily, 
+    const {
+        dailyRewards,
+        currentStreak,
+        canClaimDaily,
         claimDailyReward,
         showDailyModal,
-        setShowDailyModal 
+        setShowDailyModal
     } = useRewards();
     const { addPoints } = useEconomy();
     const { trackAchievement } = useAchievements();
-    
+
     const [showOnboarding, setShowOnboarding] = useState(() => {
         return !localStorage.getItem(ONBOARDING_KEY);
     });
@@ -123,6 +125,14 @@ export function Main() {
 
                 <Route path="/shop">
                     <Shop />
+                </Route>
+
+                <Route path="/checkin">
+                    <CheckInProvider>
+                        <Suspense fallback={null}>
+                            <CheckInPage />
+                        </Suspense>
+                    </CheckInProvider>
                 </Route>
 
                 <Route path="/contests/:slug">

@@ -20,7 +20,8 @@
     "leaderboard": "Leaderboard",
     "missions": "Missions",
     "shop": "Shop",
-    "profile": "Profile"
+    "profile": "Profile",
+    "checkin": "Check In"
   },
   "game": {
     "rollDice": "Roll Dice",

@@ -20,7 +20,8 @@
     "leaderboard": "ランキング",
     "missions": "ミッション",
     "shop": "ショップ",
-    "profile": "プロフィール"
+    "profile": "プロフィール",
+    "checkin": "Check In"
   },
   "game": {
     "rollDice": "サイコロを振る",

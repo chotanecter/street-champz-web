@@ -20,7 +20,8 @@
     "leaderboard": "Classifica",
     "missions": "Missioni",
     "shop": "Negozio",
-    "profile": "Profilo"
+    "profile": "Profilo",
+    "checkin": "Check In"
   },
   "game": {
     "rollDice": "Tira il Dado",

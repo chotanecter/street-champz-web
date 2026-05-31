@@ -20,7 +20,8 @@
     "leaderboard": "리더보드",
     "missions": "미션",
     "shop": "상점",
-    "profile": "프로필"
+    "profile": "프로필",
+    "checkin": "Check In"
   },
   "game": {
     "rollDice": "주사위 굴리기",
