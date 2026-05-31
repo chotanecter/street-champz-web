@@ -45,7 +45,7 @@ export function CheckInPage() {
       <Group justify="space-between" align="flex-start" mb="md">
         <div>
           <Title order={2}>Check In</Title>
-          <Text size="sm" c="dimmed">
+          <Text size="sm" c="white" style={{ fontFamily: "'Permanent Marker', cursive" }}>
             Tap in at your spot and see who&apos;s skating nearby.
           </Text>
         </div>
