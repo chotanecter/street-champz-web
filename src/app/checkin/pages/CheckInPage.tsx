@@ -56,8 +56,12 @@ export function CheckInPage() {
         <Alert color="red" variant="light" mb="md">
           {error}
           {locationDenied && (
-            <Text size="xs" mt={4} c="dimmed">
-              Check your browser/site location permission, then tap Check In again.
+            <Text size="xs" mt={6} c="dimmed">
+              Location is blocked for this site. To enable it:
+              <br />• <b>iPhone (Safari):</b> aA icon in the address bar → Website Settings → Location → Allow
+              <br />• <b>iPhone:</b> Settings → Privacy &amp; Security → Location Services → Safari → While Using
+              <br />• <b>Android/Chrome:</b> tap the lock icon → Permissions → Location → Allow
+              <br />Then tap Check In again.
             </Text>
           )}
         </Alert>

@@ -26,6 +26,7 @@ import {
   MessageSquare,
   Navigation,
   Newspaper,
+  ShoppingBag,
   Smartphone,
   Trophy,
   Video,
@@ -35,6 +36,7 @@ import { useSpots } from "../SpotsContext";
 import { POINTS } from "../constants";
 import { ACCESS_LABEL, spotGlyph } from "./spotVisuals";
 import { SpotPreview } from "./SpotPreview";
+import { JkwonMerchGallery } from "./JkwonMerch";
 import type { CollectResult, Spot } from "../types";
 
 function timeAgo(ts: number): string {
@@ -74,6 +76,23 @@ function openDirections(spot: Spot) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
 
+/**
+ * Best-effort Web NFC scan. Works only on Android Chrome (NDEFReader); on iOS /
+ * desktop it's unsupported, so we no-op and let the manual tap-in proceed.
+ * (Physical NTAG stickers are read natively by phones regardless.)
+ */
+async function tryNfcScan(): Promise<void> {
+  try {
+    const w = window as unknown as { NDEFReader?: new () => { scan: () => Promise<void> } };
+    if (!w.NDEFReader) return;
+    const reader = new w.NDEFReader();
+    await reader.scan();
+  } catch {
+    /* permission denied / no tag — fall through to manual collect */
+  }
+}
+
+
 export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () => void }) {
   const {
     isCollectedToday,
@@ -100,6 +119,7 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
 
   const collected = isCollectedToday(spot.id);
   const knobbed = spot.access === "knobbed";
+  const isJkwon = spot.slug === "jkwon-plaza" || spot.id === "spot_jkwon";
   const videos = videosForSpot(spot.id);
   const forum = forumForSpot(spot.id);
   const news = newsForSpot(spot.id);
@@ -109,6 +129,7 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
   async function handleCollect() {
     if (!spot || collected) return;
     setBusy(true);
+    await tryNfcScan();
     const res = await collect(spot.id, { bypassGps: DEV_BYPASS });
     setResult(res);
     setBusy(false);
@@ -209,7 +230,16 @@ export function SpotSheet({ spot, onClose }: { spot: Spot | null; onClose: () =>
             <Tabs.Tab value="videos" leftSection={<Video size={14} />}>Videos</Tabs.Tab>
             <Tabs.Tab value="forum" leftSection={<MessageSquare size={14} />}>Forum</Tabs.Tab>
             <Tabs.Tab value="news" leftSection={<Newspaper size={14} />}>News</Tabs.Tab>
+            {isJkwon && (
+              <Tabs.Tab value="merch" leftSection={<ShoppingBag size={14} />}>Merch</Tabs.Tab>
+            )}
           </Tabs.List>
+
+          {isJkwon && (
+            <Tabs.Panel value="merch" pt="sm">
+              <JkwonMerchGallery />
+            </Tabs.Panel>
+          )}
 
           {/* INFO */}
           <Tabs.Panel value="info" pt="sm">

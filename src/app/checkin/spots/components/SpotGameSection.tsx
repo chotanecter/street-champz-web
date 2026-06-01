@@ -13,6 +13,7 @@ import { SpotMap } from "./SpotMap";
 import { SpotList } from "./SpotList";
 import { SpotSheet } from "./SpotSheet";
 import { ViewToggle, type SpotView } from "./ViewToggle";
+import { JkwonMerchBanner, JkwonMerchModal } from "./JkwonMerch";
 
 const MAP_HEIGHT = 240;
 
@@ -21,6 +22,7 @@ export function SpotGameSection() {
   const [view, setView] = useState<SpotView>("list"); // list is the default
   const [coords, setCoords] = useState<GeoCoords | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [merchOpen, setMerchOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -39,6 +41,9 @@ export function SpotGameSection() {
         </div>
         <ViewToggle view={view} onChange={setView} collected={collectedCount()} total={spots.length} />
       </Group>
+
+      <JkwonMerchBanner onOpen={() => setMerchOpen(true)} />
+      <JkwonMerchModal opened={merchOpen} onClose={() => setMerchOpen(false)} />
 
       {view === "map" ? (
         <Box style={{ height: MAP_HEIGHT, borderRadius: 14, overflow: "hidden", border: "1px solid var(--mantine-color-dark-4)" }}>
