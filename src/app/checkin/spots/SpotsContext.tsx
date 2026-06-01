@@ -16,6 +16,7 @@ import { useEconomy } from "../../economy/context";
 import { useAuth } from "../../auth/context";
 import { POINTS, RULES } from "./constants";
 import { distanceMeters, dateKey, getCurrentCoords } from "./geo";
+import { logCheckIn } from "../api";
 import { LA_SPOTS, LA_SPOTS_BY_ID, LA_SPOTS_BY_SLUG } from "./laSpots";
 import { seedNewsFor } from "./mockNews";
 import {
@@ -193,6 +194,7 @@ export function SpotsProvider({ children }: { children: ReactNode }) {
       setCheckIns((prev) => [checkIn, ...prev]);
       await putCheckIn(checkIn);
       award(POINTS.CHECK_IN);
+      void logCheckIn(spot.neighborhood || spot.name || null);
 
       return { ok: true, checkIn, pointsEarned: POINTS.CHECK_IN, distanceMeters: distance };
     },

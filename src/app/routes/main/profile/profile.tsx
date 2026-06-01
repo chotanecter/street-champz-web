@@ -105,31 +105,28 @@ export function Profile() {
 
                     {/* Profile Info */}
                     <div className={classes.profileInfo}>
-                        <Group justify="space-between" align="flex-start" w="100%">
-                            <div>
-                                <Text size="xl" fw={700} className={classes.username}>
-                                    {auth.username}
-                                </Text>
-                                <Text size="sm" c="dimmed">
-                                    {profile.bio || "Street Champz Player"}
-                                </Text>
-                                {auth.country && (
-                                    <Text size="sm" c="dimmed" mt={2}>
-                                        {countryCodeToFlag(auth.countryCode)} {auth.city ? `${auth.city}, ` : ''}{auth.country}
-                                    </Text>
-                                )}
-                            </div>
-                            <ActionIcon 
-                                variant="subtle" 
-                                onClick={handleOpenEdit}
-                                aria-label="Edit profile"
-                            >
-                                <Edit2 size={18} />
-                            </ActionIcon>
-                        </Group>
+                        <ActionIcon 
+                            variant="subtle" 
+                            onClick={handleOpenEdit}
+                            aria-label="Edit profile"
+                            className={classes.editButton}
+                        >
+                            <Edit2 size={18} />
+                        </ActionIcon>
+                        <Text size="xl" fw={700} className={classes.username}>
+                            {auth.username}
+                        </Text>
+                        <Text size="sm" c="dimmed">
+                            {profile.bio || "Street Champz Player"}
+                        </Text>
+                        {auth.country && (
+                            <Text size="sm" c="dimmed" mt={2}>
+                                {countryCodeToFlag(auth.countryCode)} {auth.city ? `${auth.city}, ` : ''}{auth.country}
+                            </Text>
+                        )}
 
                         {/* Quick Stats */}
-                        <Group gap="lg" mt="md" wrap="wrap">
+                        <Group gap="lg" mt="md" wrap="wrap" justify="center">
                             {profile.stance && (
                                 <div className={classes.quickStat}>
                                     <Text size="xs" c="dimmed">Stance</Text>
@@ -171,40 +168,7 @@ export function Profile() {
                 </div>
             </GameCard>
 
-            {/* Season Competition */}
-            <GameCard>
-                <Stack gap="md">
-                    <Group justify="space-between">
-                        <Group gap="sm">
-                            <Crown size={20} color="var(--mantine-color-gold-5)" />
-                            <Text fw={600}>Season Competition</Text>
-                        </Group>
-                        <Badge size="lg" color="blue" variant="light">
-                            {getDaysRemaining()} days left
-                        </Badge>
-                    </Group>
-                    
-                    <Group gap="xs">
-                        <Star size={20} color="var(--mantine-color-gold-5)" fill="var(--mantine-color-gold-5)" />
-                        <Text size="xl" fw={700} c="gold.4">
-                            {points.toLocaleString()}
-                        </Text>
-                        <Text size="sm" c="dimmed">points</Text>
-                    </Group>
-                    
-                    <Text size="sm" c="dimmed">
-                        Most points at season end wins a special prize!
-                    </Text>
-                    
-                    <Button 
-                        variant="light" 
-                        color="blue" 
-                        onClick={() => navigate("/leaderboard")}
-                    >
-                        View Leaderboard
-                    </Button>
-                </Stack>
-            </GameCard>
+            
 
             {/* Game Stats */}
             <GameCard>

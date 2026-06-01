@@ -1,16 +1,17 @@
 // src/app/checkin/spots/components/RecentCheckInsFeed.tsx
 // One unified recent check-ins feed: Username · City · Time.
-// Sources REAL check-ins only (no fake data) — the presence check-in (top
-// "Check In" button) and any geo/sticker spot collect. In mock mode that's the
-// signed-in user; Phase 2 swaps to the global backend feed of all skaters.
+// Sources the REAL global backend feed (every skater's recent check-ins),
+// polled every 60s and visible even when you're not checked in. Falls back to
+// your own local check-ins only if the global feed is empty/unreachable.
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Avatar, Box, Group, ScrollArea, Stack, Text } from "@mantine/core";
 import { Clock } from "lucide-react";
 
 import { useSpots } from "../SpotsContext";
 import { useCheckIn } from "../../CheckInContext";
 import { useAuth } from "../../../auth/context";
+import { getRecentFeed, type RecentCheckInItem } from "../../api";
 
 interface Row {
   id: string;
@@ -30,6 +31,7 @@ function timeAgo(ts: number): string {
 }
 
 const MAX_ROWS = 12;
+const POLL_MS = 60_000;
 
 export function RecentCheckInsFeed() {
   const { checkIns, spotById, userId } = useSpots();
@@ -37,10 +39,26 @@ export function RecentCheckInsFeed() {
   const auth = useAuth() as { username?: string };
   const myName = auth?.username || "You";
 
-  const rows = useMemo<Row[]>(() => {
-    const out: Row[] = [];
+  // Global backend feed (all skaters), polled.
+  const [feed, setFeed] = useState<RecentCheckInItem[]>([]);
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      const data = await getRecentFeed();
+      if (!cancelled) setFeed(data);
+    };
+    void load();
+    const t = setInterval(() => void load(), POLL_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(t);
+    };
+    // re-load right after my own check-ins change too
+  }, [presence.myCheckIn, checkIns.length]);
 
-    // 1) presence check-in (top "Check In" button)
+  // Local fallback (my own check-ins) — used only if the global feed is empty.
+  const localRows = useMemo<Row[]>(() => {
+    const out: Row[] = [];
     if (presence.myCheckIn) {
       const ts = new Date(presence.myCheckIn.checkedInAt).getTime();
       out.push({
@@ -50,8 +68,6 @@ export function RecentCheckInsFeed() {
         timestamp: Number.isNaN(ts) ? Date.now() : ts,
       });
     }
-
-    // 2) sticker / spot collects
     checkIns
       .filter((c) => c.userId === userId)
       .forEach((c) => {
@@ -63,9 +79,22 @@ export function RecentCheckInsFeed() {
           timestamp: c.timestamp,
         });
       });
-
     return out.sort((a, b) => b.timestamp - a.timestamp).slice(0, MAX_ROWS);
   }, [checkIns, spotById, userId, presence.myCheckIn, myName]);
+
+  const rows = useMemo<Row[]>(() => {
+    if (feed.length > 0) {
+      return feed
+        .slice(0, MAX_ROWS)
+        .map((e, i) => ({
+          id: `g_${i}_${e.timestamp}`,
+          username: e.username,
+          city: e.city,
+          timestamp: e.timestamp,
+        }));
+    }
+    return localRows;
+  }, [feed, localRows]);
 
   return (
     <Box px={0} pt="md">

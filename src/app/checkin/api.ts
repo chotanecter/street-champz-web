@@ -109,3 +109,34 @@ export async function getNearby(): Promise<NearbyResponse> {
 export function isDisplaced(a: GeoCoords, b: GeoCoords): boolean {
   return distanceMeters(a, b) > CHECKIN.DISPLACEMENT_METERS;
 }
+
+
+// ---------------------------------------------------------------------------
+// Global recent check-ins feed + per-check-in logging (always-on, real data)
+// ---------------------------------------------------------------------------
+export interface RecentCheckInItem {
+  username: string;
+  city: string;
+  timestamp: number;
+}
+
+export async function logCheckIn(city) {
+  try {
+    await fetchJson('/log', { method: 'POST', body: JSON.stringify({ city: city ?? null }) });
+  } catch {
+    /* best-effort */
+  }
+}
+
+export async function getRecentFeed() {
+  try {
+    const res = await fetchJson('/recent', { method: 'GET' });
+    return (res.feed ?? []).map((r) => ({
+      username: r.username,
+      city: r.city || 'Los Angeles',
+      timestamp: new Date(r.created_at).getTime(),
+    }));
+  } catch {
+    return [];
+  }
+}

@@ -129,6 +129,7 @@ export function CheckInProvider({ children }: { children: ReactNode }) {
         setStatus('checked-in');
         setLastUpdated(Date.now());
         startPolling();
+        void api.logCheckIn(spotLabel?.trim() || null);
       } catch {
         setStatus('error');
         setError('Check-in failed. Try again.');
