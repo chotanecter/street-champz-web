@@ -8,6 +8,7 @@ import { notifications } from "@mantine/notifications";
 import { useMyNotifications } from "../../notifications/context";
 import { Leaderboard } from "./leaderboard/leaderboard";
 import { Profile } from "./profile/profile";
+import { PublicProfile } from "./profile/PublicProfile";
 import { Missions } from "./missions/missions";
 import { Achievements } from "./achievements/achievements";
 import { Teams } from "./teams/teams";
@@ -100,6 +101,10 @@ export function Main() {
 
                 <Route path="/profile">
                     <Profile />
+                </Route>
+
+                <Route path="/u/:id">
+                    {params => <PublicProfile userId={params.id} />}
                 </Route>
 
                 <Route path="/missions">

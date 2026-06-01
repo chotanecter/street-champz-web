@@ -1,5 +1,6 @@
 import { Center, Group, Loader, Stack, Text, Title, Tabs, Badge } from "@mantine/core";
 import { useEffect, useState } from "react";
+import { useLocation } from "wouter";
 import { Trophy, Medal, Award, Star, Calendar, Crown, TrendingUp } from "lucide-react";
 import { GameCard, UserAvatar } from "../../../../components";
 import { useEconomy } from "../../../economy/context";
@@ -11,6 +12,7 @@ type Team = { id: string; name: string; points: number; members: number; wins: n
 
 export function Leaderboard() {
     const auth = useAuth();
+    const [, navigate] = useLocation();
     const { points, getDaysRemaining } = useEconomy();
     const [leaderboard, setLeaderboard] = useState<Player[]>([]);
     const [teams, setTeams] = useState<Team[]>([]);
@@ -87,8 +89,18 @@ export function Leaderboard() {
                                 <div className={classes.rankBadge}>
                                     {getRankIcon(rank) || `#${rank}`}
                                 </div>
-                                <UserAvatar userId={listing.id} username={listing.username} localAvatar={listing.avatar} />
-                                <Text fw={600} truncate style={{ minWidth: 0 }}>{listing.username}</Text>
+                                <span style={{ cursor: "pointer", display: "inline-flex" }} onClick={() => navigate(`/u/${listing.id}`)}>
+                                    <UserAvatar userId={listing.id} username={listing.username} localAvatar={listing.avatar} />
+                                </span>
+                                <Text
+                                    fw={600}
+                                    lineClamp={2}
+                                    className={classes.playerName}
+                                    style={{ minWidth: 0, cursor: "pointer" }}
+                                    onClick={() => navigate(`/u/${listing.id}`)}
+                                >
+                                    {listing.username}
+                                </Text>
                             </Group>
                             <Group gap={6} wrap="nowrap" style={{ flexShrink: 0 }}>
                                 <Star size={16} className={classes.pointsIcon} />

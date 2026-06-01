@@ -1,0 +1,23 @@
+.root {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--mantine-spacing-md);
+    font-family: 'Permanent Marker', cursive;
+    --mantine-font-family: 'Permanent Marker', cursive;
+    --mantine-font-family-headings: 'Permanent Marker', cursive;
+}
+
+.name {
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.starIcon {
+    color: var(--mantine-color-gold-5);
+    fill: var(--mantine-color-gold-5);
+}
+
+.statValue {
+    color: var(--mantine-color-gold-4);
+    line-height: 1;
+}
