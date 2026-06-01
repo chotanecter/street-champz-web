@@ -158,6 +158,7 @@ export function Profile() {
 
                         {/* Points Display */}
                         <div className={classes.pointsBadge}>
+                            <Text size="xs" c="dimmed">Points</Text>
                             <PointsDisplay
                                 points={points}
                                 daysRemaining={getDaysRemaining()}

@@ -87,6 +87,10 @@
 
 .pointsBadge {
     margin-top: var(--mantine-spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
 }
 
 .statsGrid {

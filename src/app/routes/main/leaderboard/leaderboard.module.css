@@ -4,6 +4,9 @@
     padding: var(--mantine-spacing-md);
     max-width: 900px;
     margin: 0 auto;
+    font-family: 'Permanent Marker', cursive;
+    --mantine-font-family: 'Permanent Marker', cursive;
+    --mantine-font-family-headings: 'Permanent Marker', cursive;
 }
 
 .seasonCard {
@@ -65,7 +68,7 @@
 }
 
 .rankDisplay {
-    min-width: 100px;
+    min-width: 140px;
     padding: var(--mantine-spacing-md);
     background: rgba(0, 0, 0, 0.3);
     border-radius: var(--mantine-radius-lg);
