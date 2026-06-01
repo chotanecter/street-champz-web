@@ -23,6 +23,10 @@ export function SpotList({ spots, isCollected, onSelect, userCoords }: SpotListP
       dist: userCoords ? distanceMeters(userCoords, spot) : null,
     }))
     .sort((a, b) => {
+      // JKwon Plaza is always pinned to the top.
+      const aJk = a.spot.id === "spot_jkwon";
+      const bJk = b.spot.id === "spot_jkwon";
+      if (aJk !== bJk) return aJk ? -1 : 1;
       if (a.dist == null || b.dist == null) return b.spot.checkInCount - a.spot.checkInCount;
       return a.dist - b.dist;
     });

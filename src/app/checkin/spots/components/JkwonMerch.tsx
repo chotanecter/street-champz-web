@@ -9,13 +9,6 @@ import { ShoppingBag } from "lucide-react";
 // Season 1 lookbook pages (static assets in /public/jkwon-merch).
 export const JKWON_MERCH_IMAGES = [
   "/jkwon-merch/season1-1.png",
-  "/jkwon-merch/season1-2.png",
-  "/jkwon-merch/season1-3.png",
-  "/jkwon-merch/season1-4.png",
-  "/jkwon-merch/season1-5.png",
-  "/jkwon-merch/season1-6.png",
-  "/jkwon-merch/season1-7.png",
-  "/jkwon-merch/season1-8.png",
 ];
 
 /** Optional external shop link — point this at the real store when ready. */
